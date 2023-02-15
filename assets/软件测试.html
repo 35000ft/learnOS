@@ -1,0 +1,1468 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+  --mermaid-theme: night;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.native-window #md-notification {
+    border: 1px solid #70717d;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+blockquote {
+    color: #9DA2A6;
+}
+
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 0.8;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default, 
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54 !important;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+
+</style><title>软件测试</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='软件测试'><span>软件测试</span></h1><h2 id='1软件质量保证'><span>1.软件质量保证</span></h2><h3 id='11-概述'><span>1.1 概述</span></h3><h4 id='111-软件特征'><span>1.1.1 软件特征</span></h4><p><span>1.软件的定义</span></p><p><span>软件是计算机程序、规程以及可能的相关文档和运行计算机系统需要的数据。</span></p><p><span>2.软件的特征</span></p><ul><li><span>软件是逻辑产品，而不是物理产品</span></li><li><span>软件维护要比硬件维护复杂得多</span></li><li><span>软件工程 正面临持续的挑战</span></li></ul><h4 id='112-软件质量'><span>1.1.2 软件质量</span></h4><p><span>1.什么是软件质量</span></p><p><span>软件质量是系统、部件或者过程满足规定需求的程度。 </span></p><p><span>系统、部件或者过程满足顾客或者用户需要或期望的程度。</span></p><p><span>2.软件质量的需求</span></p><ul><li><span>用户的需求：能正常使用全部所需要的功能 功能强大，而且界面美观、易用、好用 内容健康，有益于生活和工作 用户的数据安全、受保护和兼容 及时得到新的产品或得到更完美的软件服务 软件可靠性很高，使用软件服务没有时间障碍</span></li><li><span>软件企业的需求：软件质量是市场竞争的需要； 高质量的软件可以大大降低“质量问题产生的成本”，增加公司 的盈利； 质量是进入国际市场的一个关键门坎； 容易维护、移植和扩充，以扩大市场或适应环境的变化。</span></li></ul><p><span>3.什么是高质量的软件？</span></p><p><span>相对的无产品缺陷或只有极少量的缺陷, 它能够准时递交给用户并且所用 的费用都是在预算内的并且满足客户需求 ，是可维护的。</span></p><p><span>4.软件质量的特征</span></p><ul><li><span>很难制定具体的、数量化的产品质量标准</span></li><li><span>对软件的测试不可能穷尽所有情况，有缺陷的软 件仍然可以使用</span><span>	</span></li><li><span>软件产品之间很难进行横向的质量对比</span></li><li><span>软件的类型不同，软件质量的衡量标准的侧重点也不同</span></li><li><span>软件需求是度量软件质量的基础，满足了用户需 求的软件质量，就是好的软件质量</span></li><li><span>会有一些隐含的需求没有明确地提出来</span></li></ul><p><span>5.</span><strong><span>软件质量的6个主要特性⭐</span></strong></p><ul><li><span>功能性：软件实现的功能达到要求的和隐含的用户需求以 及设计规范的程度</span></li><li><span>可靠性：软件在指定条件和特定时间段内维持性能的能力 程度</span></li><li><span>易使用性：用户使用该软件所付出的学习精力</span></li><li><span>效率：在指定条件下，软件功能与所占用资源之间的比值</span></li><li><span>可维护性：当发现错误、运行环境改变或客户需求改变时， 程序能修改的容易程度</span></li><li><span>可移植性：将软件从一种环境移入另一种环境的容易程度</span></li></ul><p><span>6.质量的不同特性之间可能是矛盾的</span></p><p><span>如片面强调执行效率，设计出来的软件可能结构复杂、难于理解，难于修改和维护。 如追求可靠性，一般要以一定的时间和空间作为代价。</span></p><h4 id='113-软件质量保证'><span>1.1.3 软件质量保证</span></h4><p><span>1.软件质量保证定义</span></p><p><span>软件质量保证就是为了保证软件高质量而必需的有计划的，系统化的 行动模式，是一种应用于整个软件过程的保护性活动。</span></p><p><span> 它包括： </span></p><ul><li><span>一种质量管理方法， 有效的软件工程技术（方法和工具） </span></li><li><span>在整个软件过程中采用的正式技术复审 </span></li><li><span>一种多层次的测试策略 </span></li><li><span>对软件文档及其修改的控制 </span></li><li><span>保证软件遵从软件开发标准的规程</span></li><li><span>度量和报告机制</span></li></ul><p><span>2.IEEE给出软件质量保证的定义</span></p><p><span>软件质量保证是： 一种有计划的，系统化的行动模式，它是为项目或 者产品符合已有技术需求提供充分信任所必需的。 设计用来评价开发或者制造产品的过程的一组活动， 与质量控制有区别。</span></p><p><span>3.软件质量保证的人员</span></p><p><span>软件工程师、项目管理者、客户、销售人员和SQA小组的成员</span></p><p><span>4.软件质量保证的主要任务</span></p><ul><li><span>参与开发项目的软件过程描述</span></li><li><span>复审各项软件工程活动，对其是否符合定义好的软件过程进行核实</span></li><li><span>审计指定的软件工作产品，对其是否符合定义好的软件过程中的相应部分进行核实</span></li><li><span>确保软件工作及工作产品中的偏差已被记录在案，并根据预定规程进行处理 </span></li><li><span>记录所有不符合的部分，并报告给高级管理者</span></li><li><span>协调变化的控制和管理，并帮助收集和分析软件度量信息。</span></li></ul><h4 id='114-软件测试概述'><span>1.1.4 软件测试概述</span></h4><p><span>1.软件测试的意义</span></p><ul><li><span>软件总存在缺陷。只有通过测试，才可以发现软 件缺陷</span></li><li><span>我们需要软件测试，来保障软件质量</span></li><li><span>软件测试是评估软件质量和降低软件运行中出现失效风险的一种方法</span></li></ul><p><span>2.什么是软件缺陷?</span></p><p><span>从产品内部看，软件缺陷是软件产品开发或维护过程中所存在的错误、 毛病等各种问题；</span></p><p><span>从外部看，软件缺陷是系统所需要实现的某种功能的失效或违背。</span></p><p><span>3.软件缺陷表现形式</span></p><ul><li><span>功能、特性没有实现或部分实现 </span></li><li><span>设计不合理，存在缺陷</span></li><li><span>实际结果和预期结果不一致 </span></li><li><span>运行出错，包括运行中断、系统崩溃、界面 混乱 </span></li><li><span>数据结果不正确、精度不够 </span></li><li><span>用户不能接受的其他问题，如存取时间过长 、界面不美观</span></li></ul><p><span>4.什么是软件错误？</span></p><p><span>软件错误是一种</span><strong><span>内部缺陷</span></strong><span>，是软件本身的问题。</span></p><p><span>5.为什么会产生软件缺陷？</span></p><ul><li><span>项目期限的压力  </span></li><li><span>产品的复杂度 </span></li><li><span>沟通不良 </span></li><li><span>开发人员的疲劳、压力或受到干扰 </span></li><li><span>缺乏足够的知识、技能和经验 </span></li><li><span>不了解客户的需求 </span></li><li><span>缺乏动力</span></li></ul><p><span>6.什么是软件测试？</span></p><p><span>软件测试是使用人工或自动手段来运行或</span><strong><span>测定某个系统的过程</span></strong><span>，检验它</span><strong><span>是否满足规定的需求</span></strong><span>或者</span><strong><span>弄清预期结果与实际结果之间的差别</span></strong><span>。</span></p><p><span>7.软件测试方法</span></p><p><span>（1）静态方法和动态方法 </span></p><p><span>（2）黑盒测试、白盒测试和灰盒测试 </span></p><p><span>（3）基于软件开发阶段的测试方法：需求测试 单元测试 集成测试 性能测试 压力测试 容量测试 配置测试 回归测试 安装测试 安全性测试</span></p><h4 id='115-软件质量保证与软件测试的关系'><span>1.1.5 软件质量保证与软件测试的关系</span></h4><ul><li><span>软件质量保证是一种有计划的、系统化的行动模式，设计用来评价开发或者制造产 品的过程的一组活动。SQA的职能是向管理层提供正确的可视化的信息，从而促进与协助流程改进</span></li><li><span>SQA充当测试工作的</span><strong><span>指导者和监督者</span></strong><span>，帮助测试建立质量标准、测试过程评审方法和测试流程，同时通过跟踪和评审测试，及时发现软件测试过程中的问题</span></li><li><span>有了SQA，测试工作就可以被客观的检查与评价 ，同时也可以协助测试流程的改进</span></li><li><span>测试为SQA</span><strong><span>提供数据和依据</span></strong><span>，帮助SQA更好地了解质量计划的执行情况、过程质量、产品质量和过程改进进展</span></li></ul><p><span>“质量管理”包括“质量保证” 和“质量控制”</span></p><p><img src="img/1-1.png" style="zoom:80%;" /></p><p>&nbsp;</p><h4 id='116-软件质量保证与测试人才的特点'><span>1.1.6 软件质量保证与测试人才的特点</span></h4><h3 id='12-软件质量工程体系'><span>1.2 软件质量工程体系</span></h3><h4 id='121-软件质量控制的基本方法'><span>1.2.1 软件质量控制的基本方法</span></h4><p><span>1.软件质量控制基本概念</span></p><p><span>（1）软件质量控制的定义</span></p><ul><li><span>从本身的技术意义上说，软件质量控制是一组由开发组织使用的程序和方法，使用它可在规定的资金投入和时间限制的条件下，提供满足客户质量要求的软件产品并持续不断地改善开发过程和开发组织本身，以提高将来生产高质量软件产品的能力。 </span></li><li><span>软件质量控制是开发组织执行的一系列过程。 </span></li><li><span>软件质量控制的目标是以最低的代价获得客户满意的软件产品。 </span></li><li><span>对开发组织本身来说，软件质量控制的另一个目标是从每一次开发过程中学习，使软件质量控制一次比一次更好。</span></li></ul><p>&nbsp;</p><p><span>（2）⭐6</span><strong><span>个软件质量因素</span></strong></p><ul><li><span>① 正确性：实现的功能达到设计规范，并满足用户需求的程度 </span></li><li><span>② 可靠性：规定的时间和条件下，仍能维持其性能水准的程度 </span></li><li><span>③ 易用性：用户掌握软件操作所要付出的时间及努力程度 </span></li><li><span>④ 效率：软件执行某项功能所需电脑资源（含时间）的有效程度</span></li><li><span>⑤ 可维护性：当环境改变或软件发生错误时，执行修改或恢复所做努力的程度 </span></li><li><span>⑥ 可移植性：从一个系统/环境移到另一系统/环境的容易程度</span></li></ul><p><span>2.软件质量控制的基本方法</span></p><p><span>（1）</span><strong><span>目标问题度量法GQM</span></strong></p><p><span>目标问题度量法是通过</span><strong><span>确认软件质量目标</span></strong><span>并且持</span><strong><span>续观察这些目标是否达到软件质量控制</span></strong><span>的一种方法。</span></p><p><span>首先确定业务目标， 然后确定与达到目标相关的问题， 再针对每一个问题，确定出一个度量来给出这个问题的客观答案。</span></p><ul><li><span>对一个项目的各个方面（产品、过程和资源）规定具体的目标，这些目标的表达应非常明确。</span></li><li><span>把目标提炼成可以计量的问题：对每一个目标，要引出一系列能反映出这个目标是否达到要求的问题，并要求对这些问题进行回答。</span></li><li><span>根据度量和搜集到的数据推理出问题的答案</span></li></ul><p><span>（2）风险管理法</span></p><p><span>软件风险管理法是</span><strong><span>识别与控制</span></strong><span>软件开发中</span><strong><span>对成功达到质量目标危害最大的那些因素</span></strong><span>的系统性方法。 </span></p><ul><li><span>根据经验识别项目要素的有关风险；</span></li><li><span>评估风险发生的概率和发生的代价；</span></li><li><span>按发生概率和代价划分风险等级并排序； </span></li><li><span>在项目限定条件下选择控制风险的技术并制定计划； </span></li><li><span>执行计划并监视进程； 持续评估风险状态并采取正确的措施。</span></li></ul><p><span>风险识别是试图用系统化的方法来确定威胁项目计划的因素</span></p><p><span>风险控制方法：风险避免、风险弱化、风险承担、风险转移</span></p><h4 id='122-软件质量控制模型和技术'><span>1.2.2 软件质量控制模型和技术</span></h4><p><span>1.软件质量控制模型</span></p><p><span>软件质量控制模型是指对于一个特定的软件开发项目，在如何计划和控制软件质量方面，为一个开发团队提供具体组织和实施指导的框架。</span></p><p><img src="img/1-2.png" style="zoom:80%;" /></p><p><span>2.软件质量控制模型参数</span></p><p><span>在质量控制模型中有</span><strong><span>三类控制参数（过程、产品和资源）</span></strong><span>，在质量控制中，应不断地对这三类参数进行调整与检查。</span></p><p><span>3.软件质量控制的实施过程</span></p><p><span>预开发阶段 开发阶段 维护阶段</span></p><p><img src="img/1-3.png" referrerpolicy="no-referrer"></p><p><span>4.软件质量控制技术</span></p><p><span>（1）定义：软件质量控制是通过</span><strong><span>调节质量控制参数</span></strong><span>来得到的，选择合适的质量控制技术至关重要。</span></p><p><span>（2）软件质量控制技术的特征:</span></p><ul><li><span>一个质量控制技术可以运用于软件不同生命周期阶段； </span></li><li><span>“预防性”和“检测性”结合性特征；</span></li><li><span>不同的质量控制技术对不同的质量控制参数有不同的影响。</span></li></ul><p><span>（3）选择控制技术需考虑的因素：</span></p><ul><li><span>要考虑所选技术的效益并使需求、风险和限制得到平衡。 </span></li><li><span>有些技术是</span><strong><span>冗余的或是矛盾</span></strong><span>的，只需或只能选择其一。 </span></li><li><span>有些技术是</span><strong><span>互补的</span></strong><span>，同时使用可能提高效益。 </span></li><li><span>控制技术的选用不能与约定相矛盾。 </span></li><li><span>有些技术只能用于特定的开发阶段或特定的开发活动中。</span></li><li><span>检测性技术宜尽早使用，以防早期缺陷的产生和传播。 </span></li><li><span>对于高风险的设计和程序，质量控制活动和检查点的安排时间上不要隔太久</span></li></ul><h4 id='123-软件质量保证体系'><span>1.2.3 软件质量保证体系</span></h4><p><span>1.能力成熟度模型（CMM）</span></p><p><span>能力成熟度模型是对于软件组织在定义、实施、度量、控制和改善其软件过程 的实践中各个发展阶段的描述。</span></p><p><strong><span>CMM的核心：</span></strong></p><p><span>是把软件开发视为一个过程，并根据这一原则对软件开发和维 护进行过程监控和研究，以使其更加科学化、标准化、使企业 能够更好地实现商业目标。</span></p><p><span>实施CMM的必要性：</span></p><p><span>实施CMM是改进软件质量的有效方法</span></p><p><span>2.</span><strong><span>软件质量保证SQA</span></strong></p><p><span>SQA定义：软件质量保证SQA是建立一套有计划，有系统的方法，来向管理层保证拟定出的标准、步骤、实践和方法能够正确地被所有项目所采用。</span></p><p><span>SQA目的：</span><strong><span>使软件过程对于管理人员来说是可见的。</span></strong></p><h3 id='13-软件质量度量和配置管理'><span>1.3 软件质量度量和配置管理</span></h3><h4 id='131-概述'><span>1.3.1 概述</span></h4><p><span>1.度量</span></p><p><span>软件质量度量的根本目的是为了管理的需要。</span></p><p><span>软件工程的目的之一是提供软件过程的可见度。这就需要使用度量。度量是一种可用于决 策的可比较的对象。</span></p><p><span>2.软件度量</span></p><p><span>可度量性是学科是否高度成熟的一大标志，度量使软件开发逐渐趋向专业、标准和科学。 </span></p><p><span>3.软件度量的作用</span></p><p><img src="img/1-4.png" referrerpolicy="no-referrer"></p><h4 id='132-软件质量度量'><span>1.3.2 软件质量度量</span></h4><p><span>1.软件质量和软件质量要素</span></p><p><span>对于软件质量，CMM的定义是： 一个系统、组件或过程符合特定需求的程度； 一个系统、组件或过程符合客户或用户的要求或期望的程度。</span></p><p><span>2.影响软件质量的因素</span></p><p><span>软件质量是人、 过程和技术的函数，即Q={M，P，T}。其中，</span><strong><span>Q 表示软件质量，M表示人，P表示过程，T表示技术</span></strong><span>。</span></p><p><img src="img/1-5.png" referrerpolicy="no-referrer"></p><p><span>3.软件质量模型</span></p><p><span>什么是软件质量模型？</span></p><ul><li><span>描述软件质量指标和软件质量因素之间关系 </span></li><li><span>分析软件质量因素究竟如何影响质量指标的 </span></li><li><span>寻求最优的质量保证解决方案 </span></li><li><span>最终达到软件质量目标</span></li></ul><p><span>4.缺陷排除效率</span></p><p><span>缺陷排除效率（DRE）是对质量保证及控制活动的过滤能力 的一个测量，这些活动贯穿于整个过程框架活动。</span></p><p><span>当把一个项目作为一个整体来考虑时，DRE按如 下方式定义： </span></p><p><span>DRE=E/（E＋D） 其中</span><strong><span>E=软件交付给最终用户之前所发现的错误数</span></strong><span> </span><strong><span>D=软件交付之后所发现的缺陷数</span></strong></p><h4 id='133-软件过程度量'><span>1.3.3 软件过程度量</span></h4><p><span>1.软件过程度量概念</span></p><ul><li><span>软件过程度量是对软件过程进行度量的定义、方法、活动和结果的集合。软件过程度量不是单一的活动而是一组活动的集合， 它本身也是一个系统的过程。</span></li><li><span>与任何系统的过程一样，它包括确定需求、制定计划、执行和结果分析等一系列完整的步骤。</span></li><li><span>软件过程度量通常包括如下的活动： 选择和定义度量、制定度量计划、收集数据、执行 度量分析、评估过程性能、根据评估结果采取相应措施等。</span></li></ul><p><span>2.软件过程度量常见问题</span></p><ul><li><span>度量的太多、太频繁</span></li><li><span>度量的太少、太迟</span></li><li><span>度量了不正确的事物或属性 </span></li><li><span>度量的定义不精确 </span></li><li><span>收集了数据却没有利用 </span></li><li><span>错误的解释度量数据 </span></li><li><span>自动化工具欠缺</span></li></ul><p><span>3.基于目标的软件过程度量方法</span></p><p><span>GQM模型是一种层次状结构，最上层，是一个目标， 对该目标细化就得到几个问题，构成问题层。 这几个问题，将关注的方面分解为几个部分。</span></p><p><img src="img/1-6.png" referrerpolicy="no-referrer"></p><h4 id='134-软件配置管理'><span>1.3.4 软件配置管理</span></h4><p><span>1.软件配置管理的目标</span></p><p><span>软件配置管理是在贯穿整个软件生命周期中建立和维护项目产品的完整性。</span></p><p><span>基本目标包括：</span></p><ul><li><span>软件配置管理的各项工作是有计划进行的。 </span></li><li><span>被选择的项目产品得到识别，控制并且可以被相关 人员获取。 </span></li><li><span>已识别出的项目产品的更改得到控制。 </span></li><li><span>使相关组别和个人及时了解软件基准的状态和内容。</span></li></ul><p><span>2.软件配置管理角色职责</span></p><p><span>3.软件配置管理过程描述</span></p><p><span>4.软件配置管理的关键活动</span></p><ul><li><span>配置项识别 </span></li><li><span>工作空间管理 </span></li><li><span>版本控制 </span></li><li><span>变更控制 </span></li><li><span>配置审计 </span></li><li><span>状态报告</span></li></ul><h2 id='2软件测试基础⭐'><span>2.软件测试基础⭐</span></h2><h3 id='21-为什么需要软件测试'><span>2.1 为什么需要软件测试？</span></h3><p><span>1.为什么需要软件测试？</span></p><p><span>软件总存在缺陷。</span><strong><span>只有通过测试，才可以发现软件缺陷。</span></strong><span>也只有发现了缺陷，才可以将软件缺陷从软件产品或软件系统中清理出去。 </span></p><p><span>软件失败时，也许仅仅给我们带来了不便，也可能是灾难性的。我们需要软件测试， 来保障软件质量。</span></p><p><strong><span>2.什么是软件缺陷？</span></strong></p><ul><li><span>① 软件未达到产品说明书中已经标明的功能； </span></li><li><span>② 软件出现了产品说明书中指明不会出现的错误； </span></li><li><span>③ 软件未达到产品说明书中虽未指出但应当达到的目标； </span></li><li><span>④ 软件功能超出了产品说明书中指明的范围； </span></li><li><span>⑤ 软件测试人员认为软件难以理解、不易使用，或者最终用户 认为该软件使用效果不良。</span></li></ul><p><span>3.为什么会存在缺陷？</span></p><p><span>人总是容易犯错误的、时间的压力、复杂的代码、复杂的系统架构、技术的革新、系统之间的复杂交互</span></p><p><span>4.软件缺陷分布</span></p><p><img src="img/1-7.png" referrerpolicy="no-referrer"></p><p><span>5.软件缺陷修复的费用</span></p><p><span>随着整个开发过程的时间推移，更正缺陷或修复问题的费用呈几</span><strong><span>何级数增长</span></strong></p><p><span>6.缺陷相关术语之间的关系</span></p><ul><li><strong><span>缺陷</span></strong><span>是由于</span><strong><span>人为错误或者环境因素</span></strong><span>导致软件系统中存在的瑕疵； </span></li><li><span>运行</span><strong><span>存在缺陷的软件系统</span></strong><span>，并</span><strong><span>不一定</span></strong><span>会产生运行错误或对用户产生消极的影响，即</span><strong><span>失效</span></strong><span>； </span></li><li><span>假如运行存在缺陷的软件系统，</span><strong><span>发生了错误或者对用户产生了影响</span></strong><span>， 这就是失效； </span></li><li><span>一个缺陷的存在不一定会产生失效，但是有的缺陷可以产生非常多的失效； </span></li><li><strong><span>缺陷屏蔽</span></strong><span>：一个缺陷会被测试对象中的另外缺陷所掩盖；</span></li></ul><p><img src="img/1-8.png" style="zoom:80%;" /></p><p><img src="img/1-9.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><h3 id='22-软件测试的基本概念'><span>2.2 软件测试的基本概念</span></h3><p><span>1.软件测试的概念</span></p><ul><li><p><span>狭义观点：软件测试就是为了发现错误而执行程序的过程。 </span></p></li><li><p><span>标准定义IEEE：使用人工或自动的手段，来运行或测试软件系统的过程，目的是检验软件系统是否满足规定的需求，并找出与预期结 果之间的差异。 </span></p></li><li><p><span>辨证观点：软件测试就是为了证明程序有错，而不是证明程序无错误</span></p></li><li><p><span>风险观点：测试被定义为“对软件系统中潜在的各种风险进行评估的 活动” </span></p></li><li><p><span>标准观点：软件测试就是“验证（Verification）”和“有效性确认（ Validation）”活动构成的整体，即软件测试=V&amp;V</span></p><p><span>	</span><span>验证：是检验软件是否已正确地实现了产品规格书所定义的系统功能和特性 </span></p><p><span>	</span><span>有效性确认：是确认所开发的软件是否满足用户真正需求的活动</span></p></li></ul><p><span>2.其它关于软件测试的说法</span></p><ul><li><span>成功的测试时发现了至今为止尚未发现的错误的测试</span></li><li><span>好的测试方案是极可能发现迄今为止尚未发现的错误的测试方案</span></li><li><span>软件测试是一个过程，包含若干活动，运行软件测试进行测试只是</span></li><li><span>活动之一 进行软件测试可以人工方式也可以借助于工具 </span></li><li><span>进行软件测试可以运行软件也可以不运行软件</span></li><li><span>软件测试的目的不仅仅是为了发现错误</span></li></ul><p><span>3.</span><strong><span>软件测试的目的</span></strong></p><ul><li><span>从用户角度：通过软件测试发现隐藏的错误和缺陷，考虑是否可以接受该产品</span></li><li><span>从开发者角度：表明软件产品不存在错误，验证软件实现 了所有用户的要求</span></li><li><span>从测试人员角度：发现错误，预测错误，提供软件可靠性错误，对软件做出评价</span></li></ul><h3 id='23-软件测试的分类⭐'><span>2.3 软件测试的分类⭐</span></h3><ul><li><span>按</span><strong><span>测试的对象或范围</span></strong><span>分类， 如</span><strong><span>单元测试、文档测试、系统测试等</span></strong><span> </span></li><li><span>按</span><strong><span>测试目的</span></strong><span>分类， 如</span><strong><span>功能测试、回归测试、性能测试、可靠性测试、安全性测试和兼容性测试</span></strong><span>等 </span></li><li><span>根据测试过程中</span><strong><span>被测软件是否被执行</span></strong><span>， 分为</span><strong><span>静态测试和动态测试</span></strong><span> </span></li><li><span>根据</span><strong><span>是否针对系统的内部结构和具体实现算法</span></strong><span>来完成测试， 可分为</span><strong><span>白盒测试和黑盒测试</span></strong><span> </span></li><li><span>按</span><strong><span>测试方法</span></strong><span>分类，</span><strong><span>数据库测试、压力测试、恢复测试、安全测试、兼容性测</span></strong><span>试等</span></li></ul><h3 id='24-软件测试的原则'><span>2.4 软件测试的原则</span></h3><p><span>1.</span><strong><span>软件测试的原则</span></strong></p><ul><li><span>① 完全测试是不可能的。</span></li><li><span>② 软件测试是有风险的行为。</span></li><li><span>③ 测试无法显示潜伏的缺陷。即使在测试过程中没有发现缺陷，也不能证明测试对象是完全正确的。</span></li><li><span>④ 软件缺陷的群集现象。找到的软件缺陷越多，说明附近的软件缺陷越多。</span></li><li><span>⑤ 如果想使软件测试有效，就要更加关注那些</span><strong><span>经常或者可能出现错误的程序段</span></strong><span> ，在那里发现软件缺陷的可能性会大的多。</span></li><li><span>⑥ 在系统分析、设计、实现阶段的</span><strong><span>复审工作</span></strong><span>中能够发现和避免 80% 的软件缺陷，此后的系统测试能够帮助我们找出剩余缺陷中的 80% ，最后的 5% 的软件缺陷可能只有在系统交付使用后用户经过大范围、长时间使用后才会曝露出来。</span></li><li><span>⑦ 80% 的软件缺陷可以借助人工测试而发现， 20% 的软缺陷可以借助自动化测试能够得以发现。由于这二者间</span><strong><span>具有交叉的部分</span></strong><span>，因此尚有 5% 左右的软件缺陷需要通过其它方式进行发现和修正。</span></li><li><span>⑧ 软件测试越多，其免疫力也越强，表现为同样的测试用例被重复使用多次，将不能发现新的缺陷</span></li><li><span>⑨ 并非所有软件缺陷都能修复，其原因在于： 没有足够的时间、不算真正的软件缺陷、修复的风险太大、不值得修复</span></li><li><span>⑩ 应该尽早地和不断地进行软件测试； </span></li><li><span>严格执行测试计划，排除测试的随意性； </span></li><li><span>所有的测试应该追溯到用户需求；</span></li><li><span>测试应该从“小规模”开始，逐步向“大规模”即渐增式build测试； </span></li><li><span>不存在缺陷并不代表是有用的系统</span></li></ul><p><span>2.软件测试的目标</span></p><p><span>以最少的时间和人力找出软件中潜在的各种错误和缺陷</span></p><p><span>3.⭐</span><strong><span>测试与调试有什么区别？</span></strong></p><ul><li><span>测试的目的是找出存在的错误；而调试的目的是定位错误并修改程序以修正错误； </span></li><li><span>调试是测试之后的活动，测试和调试在目标、方法和思路上都有所不同； </span></li><li><span>测试从一个已知条件开始，使用预先定义的过程，有预知结果；</span></li><li><span>调试从一个未知的条件开始，结束的过程不开预计； </span></li><li><span>测试过程可以实现设计，进度可实现确定；</span></li><li><span>调试不能描述过程或持续时间</span></li></ul><h3 id='25-软件测试过程模型'><span>2.5 软件测试过程模型</span></h3><p><span>1.测试与软件开发各阶段的关系</span></p><p><strong><span>软件开发过程</span></strong><span>是一个</span><strong><span>自顶向下</span></strong><span>逐步细化的过程。</span></p><p><strong><span>测试过程</span></strong><span>是依相反顺序安排的</span><strong><span>自底向上逐步集成</span></strong><span>的过程。</span></p><p><span>2.软件测试阶段</span></p><p><img src="img/2-1.png" referrerpolicy="no-referrer"></p><p><span>3.软件生命周期中的测试级别</span></p><ul><li><strong><span>单元测试</span></strong><span>：完成对最小的软件设计单元——模块的验证工作，只有在保证模块作为一个独立运行单元能够正确运行的条件下，后续的 测试才可能进行. 单元测试通常情况下是面向白盒的</span></li><li><strong><span>集成测试</span></strong><span>：把经过单元测试的模块按软件结构组合在一起作为一个 系统或一个子系统来综合测试</span></li><li><strong><span>系统测试</span></strong><span>：测试软件系统和其他的系统元素（及硬件、数据库和人 机交互信息）组合构成完整的计算机应用系统中所有的元素配合是否合适以及整个系统的功能、性能、执行强度、安全性等是否达到 规定标准</span></li><li><strong><span>验收测试</span></strong><span>：根据产品规格说明书严格检查产品，确保开发的软件产 品符合用户的各方面要求</span></li></ul><p><span>4.</span><strong><span>软件测试过程模型</span></strong></p><p><span>软件测试由一系列活动组成，</span><strong><span>软件测试过程模型用于定义软件测试的流程和方法。</span></strong></p><p><span>（1）V模型</span></p><p><span>V模型是软件开发</span><strong><span>瀑布模型的变体</span></strong><span>，反映了测试活动与分析和设计的关系。</span></p><p><span>V模型的特点：</span></p><ul><li><span>展示了动态测试的全过程，并</span><strong><span>定义了动态测试与开发之间的关系</span></strong><span>。 </span></li><li><span>动态测试的行为与开发过程的行为相对应，测试基础是对应开发阶段的文档。</span></li></ul><p><span>V模型的缺点：</span></p><ul><li><span>测试与开发文档之间很少有完美的一对一关系。 </span></li><li><strong><span>完全没有提及静态测试</span></strong><span>，忽略了代码审查、需求规格说明审查等重要的测试手段。 </span></li><li><strong><span>软件测试时间经常</span></strong><span>由于前期开发阶段进度的拖延而</span><strong><span>被挤占</span></strong><span>，甚至取消 ，从而使得测试质量得不到保证。</span></li></ul><p><span>① V模型A版本</span></p><p><img src="img/2-2.png" style="zoom:80%;" /></p><p><span>②V模型B版本</span></p><p><img src="img/2-3.png" style="zoom:80%;" /></p><p><span>③ V模型C版本</span></p><p><img src="img/2-4.png" style="zoom:80%;" /></p><p><span>（2）W模型</span></p><p><span>W模型：是对 V模型的改进，</span><strong><span>表明测试与开发的并行关系</span></strong><span> ，充分</span><strong><span>体现测试贯穿于整个开发过程</span></strong></p><p><strong><span>W模型的特点：</span></strong></p><ul><li><span>W是V的发展，强调测试应在整个开发周期进行。 </span></li><li><span>开发行为与测试行为一一对应，但W并不主张动态测试必须要与开发阶段对应起来，W也不限制动态测试行为必须严格地基于开发行为产生的单一文档</span></li></ul><p><span>W模型的缺点：</span></p><p><span>在W模型中，需求、设计、编码等活动是串行的，测试和开发活动也保持一种线性的前后关系。只有上一个阶段完成之后，才能正式开始 下一个阶段工作，从而</span><strong><span>无法支持迭代的开发模式</span></strong><span>。</span></p><p><img src="img/2-5.png" style="zoom:80%;" /></p><p><span>（3）H模型</span></p><p><span>将测试活动视为一个完全独立的活动，具有独立的包括测 试准备活动和测试执行活动的流程。 只要测试准备就绪，就可以开始测试执行活动。在整个开发周期内 ，存在多个这样独立的测试流程。 体现“尽早准备、尽早执行”的思想，并且不同测试活动可以按照合理的顺序进行。</span></p><p><img src="img/2-6.png" referrerpolicy="no-referrer"></p><h2 id='3黑盒测试⭐'><span>3.黑盒测试⭐</span></h2><h3 id='31-黑盒测试的基本概念'><span>3.1 黑盒测试的基本概念</span></h3><p><span>1.什么是黑盒测试？</span></p><p><span>黑盒测试又称</span><strong><span>功能测试</span></strong><span>、</span><strong><span>数据驱动测试</span></strong><span>或</span><strong><span>基于规格说明书</span></strong><span>的测试，是一种从</span><strong><span>用户观点</span></strong><span>出发的测试。 </span></p><p><span>在测试时，把被测程序视为一个不能打开的黑盒子，在完全不考虑程序内部结构和内部特性的情况下进行。</span></p><p><span>2.黑盒测试的目的</span></p><p><span>采用黑盒测试的目的主要是在已知软件产品所应具有的功能的基础上</span></p><ul><li><span>① 检查程序功能能否按需求规格说明书的 规定正常使用，测试各个功能是否有遗漏，检 测性能等特性要求是否满足。 </span></li><li><span>② 检测人机交互是否错误，检测数据结构或外部数据库访问是否错误，程序是否能适当地接收输入数据而产生正确的输出结果，并保持外部信息的完整性。 </span></li><li><span>③ 检测程序初始化和终止方面的错误。</span></li></ul><p><span>3.</span><strong><span>黑盒测试主要测试的错误类型</span></strong></p><ul><li><span>① 不正确或遗漏的功能；</span></li><li><span>② 接口、界面错误； </span></li><li><span>③ 性能错误；</span></li><li><span>④ 数据结构或外部数据访问错误； </span></li><li><span>⑤ 初始化或终止条件错误等等</span></li></ul><p><span>4.黑盒测试能取代白盒测试吗？</span></p><ul><li><span>黑盒测试只能观察软件的外部表现，即使软件的输入输出都是正确的，却并不能说明软件就是正确的，只有白盒测试才能发现真正的原因。 </span></li><li><span>白盒测试能发现程序里的隐患，像内存泄漏、误差累计问题。在这方面，黑盒测试存在严重的不足。</span></li><li><span>通过了白盒测试只能说明程序符合设计要求，并不能说明最终的软件符合用户需求。</span></li><li><span>白盒测试在测试的早期采用，而黑盒测试 主要用于测试的后期。黑盒测试故意不考 虑控制结构，而是注意信息域。</span></li><li><span>黑盒测试与白盒测试都不能取代对方， 只有两者结合才能弥补对方的不足</span></li></ul><h3 id='32-黑盒测试方法⭐'><span>3.2 </span><strong><span>黑盒测试方法</span></strong><span>⭐</span></h3><h4 id='321-等价类划分法'><span>3.2.1 等价类划分法</span></h4><p><span>1.概念</span></p><ul><li><span>等价类划分技术将不能穷举的测试过程进行合理分类 ，从而保证设计出来的测试用例具 有完整性和代表性。 </span></li><li><span>等价类划分技术可以应用在</span><strong><span>所有的测试级别</span></strong><span>中</span></li><li><span>等价类划分法是将程序输入 定义域中的所有可能的输入数据（含有效 和无效）划分成若干个等价类，每一类的 一个代表性的数据在测试中的作用，就等价于这一类中的所有其它数据。 </span></li></ul><p><span>2.什么等价类？</span></p><p><span>等价类是指</span><strong><span>某个输入域的子集合</span></strong><span>。在该子集合中，各个输入数据对于揭露错误都是等效的，即每一类的代表性数据在测试中的作用都等价于这一类中的其它数据。</span></p><p><span>测试某等价类的代表值就是等效于对于这一类其它值的测试。</span></p><p><span>3.</span><strong><span>等价类的类型</span></strong></p><p><strong><span>有效等价类</span></strong><span>：指</span><strong><span>符合《程序规格说明书》，输入合理的数据集合</span></strong><span> </span></p><p><strong><span>无效等价类</span></strong><span>：指不符合《程序规格说明书》， 输入不合理的数据集合</span></p><p><span>4.采用等价类划分法设计测试用例步骤</span></p><p><span>（1）确定等价类，列出等价类表</span></p><p><span>（2）确定测试用例</span></p><p><span>例1：计算两个1～100之间整数的和</span></p><p><span>我们将输入域分成了一个有效等价类(1-100）和两个无效等价类(&lt;1,&gt;100)，并为每一个等价类进行编号，然后从每一个等价类中选取一个代表性的数据来测试</span></p><p><img src="img/3-1.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><strong><span>5.⭐确定等价类的原则</span></strong></p><ul><li><span>①在输入条件</span><strong><span>规定了取值范围或值的个数</span></strong><span>的情况下,则可以确立一</span><strong><span>个有效等价类和两个无效等价类</span></strong></li></ul><p><img src="img/3-2.png" referrerpolicy="no-referrer"></p><ul><li><p><span>②按照数值集合划分，在输入条件</span><strong><span>规定了输入值的集合或者规定了“必须如何”的条件</span></strong><span>的情况下,可确立</span><strong><span>一个有效等价类和一个无效等价类</span></strong></p></li><li><p><span>③在输入条件是一个</span><strong><span>布尔量</span></strong><span>的情况下,可以确定</span><strong><span>一个有效类和一个无效类</span></strong><span>。</span></p></li><li><p><span>④在规定了输入数据的</span><strong><span>一组值（假定n个）</span></strong><span>,并且程序要</span><strong><span>对每一个输入值分别处理</span></strong><span>的情况下,可确立</span><strong><span>n个有效等价类和一个无效等价类</span></strong><span>。</span></p><p><span>例：输入条件说明学历可为:专科、本科、硕士、博士四种之一，等价类： 分别取这四种作为四个有效等价类， 把四种学历之外的学历作为无效等价类</span></p></li><li><p><span>⑤在规定了输入数据必须遵守的规则的情况下, 可确立一个有效等价类（符合规则）和</span><strong><span>若干个无效等价类</span></strong><span>（</span><strong><span>从不同角度违反规则</span></strong><span>）</span></p><p><span>例：程序输入条件为以字符 ‘a’开头、长度为8的字符串， 并且字符串不包含‘a’~ ‘z’之 外的其它字符</span></p><p><span>则有效等价类为满足了上述所有条件的字符串， 无效等价类为</span><strong><span>不以‘a’开头 的字符串</span></strong><span>、</span><strong><span>长度不为8的字符串</span></strong><span>和</span><strong><span>包含了‘a’~ ‘z’之外其它字符</span></strong><span>的字符串</span></p></li><li><p><span>⑥在确知已划分的等价类中各元素在</span><strong><span>程序处理中的方式不同</span></strong><span>的情况下,则应再将该等价类</span><strong><span>进一步的划分为更小的等价类</span></strong></p><p><span>学生信息管理系统——“登录”模块，在规格说明书中描述这一模块：</span></p><p><span>要求1：用户名使用学生学号，学号要求有11位数字组成，如：20061344001。 </span></p><p><span>细分等价类：等价类在具体程序处理时发现并不是真正的等价。比如学号： 20061344001 ； 20071344001 ； 20081344001 ；分别为该校2006级学生，2007级学生和 2008级学生，那么在选课，学籍管理等功能模块中并不 等价。如果出现这种情况，可以根据具体情况来细分相应的等价类。</span></p></li></ul><p><span>6.设计测试用例</span></p><p><span>（1）在确立了等价类后,可建立等价类表,列出所有划分出的等价类输入条件</span></p><p><span>（2） 然后从划分出的等价类中按以下三个原则设计测试用例</span></p><ul><li><span>①为每一个等价类规定一个唯一的编号。 </span></li><li><span>②设计一个新的测试用例,使其尽可能多地覆盖尚未被覆盖地有效等价类,重复这一步，直到所有的有效等价类都被覆盖为止。 </span></li><li><span>③设计一个新的测试用例,使其仅覆盖一个尚未被 覆盖的无效等价类,重复这一步，直到所有的无效 等价类都被覆盖为止。</span></li></ul><p><span>例2：设有一个档案管理系统，要求用户 输入以年月表示的日期。假设日期限定 在1990年1月~2049年12月，并规定日期 由6位数字字符组成，前4位表示年，后2 位表示月。现用等价类划分法设计测试 用例，来测试程序的“日期检查功能”</span></p><p><span>（1）划分等价类并编号</span></p><p><img src="img/3-3.png" referrerpolicy="no-referrer"></p><p><span>（2）设计测试用例</span></p><figure><table><thead><tr><th><span>输入</span></th><th><span>期望结果</span></th><th><span>覆盖等价类</span></th></tr></thead><tbody><tr><td><span>201809</span></td><td><span>输入有效</span></td><td><span>①⑤⑧</span></td></tr><tr><td><span>95June</span></td><td><span>无效输入</span></td><td><span>②</span></td></tr><tr><td><span>20036</span></td><td><span>无效输入</span></td><td><span>③</span></td></tr><tr><td><span>2001006</span></td><td><span>无效输入</span></td><td><span>④</span></td></tr><tr><td><span>198912</span></td><td><span>无效输入</span></td><td><span>⑥</span></td></tr><tr><td><span>200401</span></td><td><span>无效输入</span></td><td><span>⑦</span></td></tr><tr><td><span>200100</span></td><td><span>无效输入</span></td><td><span>⑨</span></td></tr><tr><td><span>200113</span></td><td><span>无效输入</span></td><td><span>⑩</span></td></tr></tbody></table></figure><p><span>例3：</span></p><p><span>某公司公开招聘员工，规定报名者年龄 应在20周岁至45周岁之间（到2020年6月 30日止），即出生年月不早于1975年7月 ，不晚于2000年6月。报名程序具有自动 检验输入数据的功能。如出生年月不在 上述范围内，将拒绝接受，并显示“年 龄不合格”等出错信息。试用等价分类 法设计对这一程序功能的测试用例</span></p><h4 id='322-边界值分析法'><span>3.2.2 边界值分析法</span></h4><p><span>1.什么是边界值分析法？</span></p><p><span>边界值分析法就是</span><strong><span>对输入或输出的边界值</span></strong><span>进行测试的一种黑盒测试方法。通常边界值分析法是作为对等价类划分法的补充，这种情况下， 其测试用例来自等价类的边界。</span></p><p><span>2.为什么使用边界值分析法？</span></p><p><span>实践表明，大量的故障往往发生在输入定义域或输出值域的边界上，而不是在其内部。因此，针对各种边界情况设计测试用例 ，通常会取得很好的测试效果。</span></p><p><span>3.怎样用边界值分析法设计测试用例？</span></p><p><span>（1）首先确定边界情况。通常</span><strong><span>输入或输出等价类的边界</span></strong><span>就是应该着重测试的边界情况。 </span></p><p><span>（2）选取边界值（如：</span><strong><span>正好等于、刚刚 大于或刚刚小于边界的值</span></strong><span>）作为测试数据，而不是选取等价类中的典型值或任意值。</span></p><p><span>通常情况下，软件测试所包含的边界检验有几种类型： ⚫</span></p><figure><table><thead><tr><th><span>数字</span></th><th><span>最大/最小</span></th></tr></thead><tbody><tr><td><span>字符</span></td><td><span>首位/末位</span></td></tr><tr><td><span>位置</span></td><td><span>上/下</span></td></tr><tr><td><span>速度</span></td><td><span>最快/最慢</span></td></tr></tbody></table></figure><p><span>4.确定边界值应遵循的原则</span></p><ul><li><p><span>（1）如果输入条件规定了</span><strong><span>值的范围</span></strong><span>,则应取</span><strong><span>刚达到这个范围的边界的值</span></strong><span>,以及</span><strong><span>刚刚超越这个范围边界的值</span></strong><span>作为测试输入数据。 </span></p></li><li><p><span>例如，如果程序的规格说明中规定：“重量在10公斤 至50公斤范围内的邮件，其邮费计算公式为……” 。 作为测试用例，我们应取10及50，还应取 10.01,49.99,9.99及50.01等。 </span></p></li><li><p><span>（2）如果输入条件</span><strong><span>规定了值的个数</span></strong><span>,则用</span><strong><span>最大个数,最小个数,比最小个数少一,比最大个数多一的数</span></strong><span>作为测试数据。 </span></p><p><span>比如，一个输入文件应包括1~255个记录，则测试用 例可取1和255，还应取0及256等。</span></p></li><li><p><span>（3）将规则（1）和（2）应用于输出条件，即设计测试用例</span><strong><span>使输出值达到边界值及其左右</span></strong><span>的值。 </span></p><p><span>例如，某程序的规格说明要求计算出“每月保 险金扣除额为0至1165.25元”，其测试用例可 取0.00及1165.24、还可取 -0.01 及 1165.26等。</span></p></li><li><p><span>（4）如果程序的规格说明给出的</span><strong><span>输入域或输出域是有序集合</span></strong><span>，则应选取</span><strong><span>集合的第一个元素和最后一个元素</span></strong><span>作为测试用例。 </span></p></li><li><p><span>（5）如果程序中使用了一个内部数据结构, 则应当选择这个内部数据结构的边界上的值作为测试用例。 </span></p></li><li><p><span>（6）分析规格说明，找出其它可能的边界条件。</span></p></li></ul><p><span>5.内部边界值分析</span></p><p><span>某些边界值条件是</span><strong><span>不需要呈现给用户</span></strong><span>的，或者说用户是很难注意到的，但同时确实</span><strong><span>属于检验范畴内的边界条件</span></strong><span>，称为</span><strong><span>内部边界值条件</span></strong><span>或子边界值条件。</span></p><p><span>内部边界值条件主要有下面几种： 数值的边界值；字符的边界值； 其它边界值</span></p><p><span>（1）数值的边界值</span></p><p><img src="img/3-4.png" style="zoom:67%;" /></p><p><span>（2）字符的边界值</span></p><p><img src="img/3-5.png" referrerpolicy="no-referrer"></p><p><span>（3）有一些边界条件容易被人忽略，如在文本框中 不是没有输入正确的信息，而是压根没输入任何内容，就按“确认”按钮。这种情况在实际 使用中经常发生。 ➢ 因此测试时需要考虑程序对下列情况的反应：  </span><strong><span>默认值 、空白值、空值 、零值、无输入</span></strong></p><p><span>在实际的测试用例设计中，需要将基本的软件设计要求和程序定义的要求结合起来，即</span><strong><span>结合基本边界值条件和内部边界值条件</span></strong><span>来设计有效的测试用例。</span></p><p><span>6.有多个变量时如何考虑边界？</span></p><p><span>可靠性理论中的两个假设：</span></p><ul><li><p><strong><span>“单缺陷”假设</span></strong><span>：失效极少是由有两个或两个以上的缺陷同时发生而引起的。</span></p><p><span>因此，在边界值分析法中获取测试用例的方法是：  </span></p><p><span>① 每次保留程序中一个变量，让其余的变量取正常值 ，被保留的变量依次取min、min+、nom、max-和max。 ②对程序中的每个变量重复① </span></p></li><li><p><strong><span>“多缺陷”假设</span></strong><span>：失效是由两个或两个以上缺陷同时作用而引起的。</span></p><p><span>因此，</span><strong><span>按多缺陷假</span></strong><span>设来设计测试用例，要求在选取测试用例时</span><strong><span>同时让多个变量取边界值。</span></strong></p></li></ul><p><span>7.⭐</span><strong><span>边界值分析法测试用例</span></strong></p><p><span>采用边界值分析测试的基本思想是：故障往往出现在输入变量的边界值附近。 </span></p><p><span>因此，</span><strong><span>边界值分析法</span></strong><span>利用输入变量的</span><strong><span>最小值(min)、略大于最小值(min+) 、输入值域内的任意值(nom)、略小于最大值(max-)和最大值(max)</span></strong><span>来设计测试用例</span></p><p><span>例3：有二元函数f(x,y)，其中x∈[1,12]，y∈[1,31]。 采用边界值分析法设计的测试用例是：</span></p><p><span>{ &lt;1,15&gt;, &lt;2,15&gt;, &lt;11,15&gt;, &lt;12,15&gt;, &lt;6,15&gt;, &lt;6,1&gt;, &lt;6,2&gt;, &lt;6,30&gt;, &lt;6,31&gt; }</span></p><p><span>⭐</span><strong><span>推论：对于一个含有n个变量的程序，采用边界值分析法测试程序会产生4n+1个测试用例。</span></strong></p><p><span>8.</span><strong><span>健壮性边界测试</span></strong></p><p><span>健壮性边界测试是作为边界值分析的一个简单的扩充 ，它除了对变量的5个边界值分析取值外，还需要增加一个</span><strong><span>略大于最大值(max+)以及略小于最小值(min-)</span></strong><span>的取 值，检查超过极限值时系统的情况。</span></p><p><span>⭐因此，对于有</span><strong><span>n个变量</span></strong><span>的函数采用</span><strong><span>健壮性测试</span></strong><span>需要</span><strong><span>6n+1</span></strong><span>个测试用例。</span></p><p><span>例4：有二元函数f(x,y)，其中 x∈[1,12]，y∈[1,31]。 则采用边界值分析法设计的 健壮性测试最有意义的部分不是 健壮性测试用例是：</span></p><p><span>9.</span><strong><span>健壮性最坏情况测试</span></strong></p><p><span>健壮性最坏情况测试是最坏情况测试的扩展，这种测 试使用健壮性测试的七个元素集合的笛卡尔积，以生 成测试用例。 </span></p><p><span>因此，对于有</span><strong><span>n个变量</span></strong><span>的函数采用</span><strong><span>健壮性最坏情况</span></strong><span>测试 需要</span><strong><span>7^n</span></strong><span>个测试用例。</span></p><h4 id='323-判定表法'><span>3.2.3 判定表法</span></h4><p><span>1.判定表的概念</span></p><p><span>判定表是分析和表达多逻辑条件下执行不同操作的工具。</span></p><p><span>⭐在所有的</span><strong><span>黑盒测试</span></strong><span>方法中，基于</span><strong><span>判定表</span></strong><span>的测试是</span><strong><span>最为严格、最具有逻辑性</span></strong><span>的测试方法。</span></p><p><span>2.判定表的组成</span></p><p><span>（1）条件桩： 列出问题的所有条件</span></p><p><span>（2）动作桩：列出可能采取的操作</span></p><p><span>（3）条件项：列出条件桩的取值</span></p><p><span>（4）动作项：列出条件项各种取值下应 该采取的动作</span></p><p><img src="img/3-7.png" referrerpolicy="no-referrer"></p><p><img src="img/3-8.png" referrerpolicy="no-referrer"></p><p><span>3.规则</span></p><p><span>（1）什么是规则</span></p><ul><li><span>任何一个</span><strong><span>条件组合的特定取值及其相应要执行的操作</span></strong><span>称为规则 ； </span></li><li><span>在判定表中贯穿条件项 和动作项的一列就是一条规则</span></li><li><span>判定表中</span><strong><span>列出多少组条件取值</span></strong><span>，也</span><strong><span>就有多少条规则</span></strong><span>，即</span><strong><span>条件项和动作项有多少列</span></strong></li></ul><p><span>（2）规则合并</span></p><p><span>规则合并就是判定表的简化。 有两条或多条规则</span><strong><span>具有相同的动作</span></strong><span>，并且其</span><strong><span>条件项</span></strong><span>之间存在着极为</span><strong><span>相似</span></strong><span>的关系，就可以将规则合并。</span></p><p><span>以上图的三角形问题为例。</span></p><p><span>① 两条规则合并成一条</span></p><p><img src="img/3-9.png" style="zoom:50%;" /></p><p><span>② 两条规则的进一步合并</span></p><p><img src="img/3-10.png" style="zoom:50%;" /></p><p>&nbsp;</p><p><span>4.判定表建立步骤</span></p><p><span>根据软件规格说明 ：</span></p><p><span>①列出所有的条件桩和动作桩； </span></p><p><span>②确定规则的个数； 假如</span><strong><span>有n个条件，每个条件有两个取值（0,1 ）</span></strong><span>,则有</span><strong><span>2^n</span></strong><span> 种规则； </span></p><p><span>③填入条件项； </span></p><p><span>④填入动作项，得到初始决策表； </span></p><p><span>⑤简化，合并相似规则（相同动作）</span></p><p><span>例4：对于功率大于50马力的机器 ，并且维修记录不全或已运行10年以上的机器，应给予优先的维修处理……” 请建立判定表</span></p><p><span>5.⭐</span><strong><span>基于判定表的测试</span></strong></p><p><span>根据输入输出绘制判定表；设计测试用例</span><strong><span>覆盖判定表中每条规则；</span></strong></p><p><span>例5：某航空公司的管理软件中某功能规定：去欧美的国际航线所有座位都有食物供应，每个座位都可以播放电影；去非欧美的国际航线都有食物供应，只有商务舱可以播放电影；国内的航班的商务舱都有食物供应，但是不可以播放电影；国内航班经济舱飞行时间大于2小时有食物供应，但不可以播放电影</span></p><p><span>6.⭐判定表的优点</span></p><ul><li><span>能把复杂的问题按各种可能的情况一一列举 出来 </span></li><li><span>简明而易于理解 </span></li><li><span>可避免遗漏</span></li></ul><p><span>7.判定表的缺点及解决方法</span></p><p><span>判定表的缺点：</span></p><ul><li><span>不能表达重复执行的动作，例如循环结构 </span></li><li><span>判定表不能很好地伸缩 </span></li><li><span>有n个条件的决策表有</span><strong><span>2^n</span></strong><span> 个规则</span></li></ul><p><span>解决方法：使用扩展条目判定表、代数简化表，将大表 “分解”为小表，查找条件项的判定表式</span></p><h4 id='324-因果图法'><span>3.2.4 因果图法</span></h4><p><span>1.因果图法产生的背景</span></p><p><span>等价类划分法和边界值分析方法都是着重考虑输入条件，但没有考虑输入条件的各种组合、输入条件之间的</span><strong><span>相互制约关系</span></strong><span>。这样虽然各种输入条件可能出错的情况已经测试到了，但</span><strong><span>多个输入条件组合</span></strong><span>起来可能出错的情况却</span><strong><span>被忽视了</span></strong><span>。</span></p><p><span>2.什么是因果图法？</span></p><p><span>是一种利用图解法分析输入的各种组合情况，从而设计测试用例的方法。</span></p><p><span>比较适合输入条件比较多的情况 ，测试所有的输入条件的排列组合。所谓的</span><strong><span>原因就是输入</span></strong><span>，所谓的</span><strong><span>结果就是输出</span></strong><span>。</span></p><p><span>3.因果图基本图形符号</span></p><p><strong><span>节点代表原因或结果的状态</span></strong><span>，</span><strong><span>原因用C表示</span></strong><span>，</span><strong><span>结果用E表示</span></strong><span>。状态的取值为0或1。</span></p><p><img src="img/3-11.png" referrerpolicy="no-referrer"></p><p><span>4.⭐</span><strong><span>因果图中原因和结果之间的关系</span></strong></p><ul><li><span>恒等：若</span><strong><span>原因出现</span></strong><span>，则</span><strong><span>结果出现</span></strong><span>；若</span><strong><span>原因不出现</span></strong><span>，则</span><strong><span>结果不出现</span></strong><span>。 </span></li><li><span>非（～）：若</span><strong><span>原因出现</span></strong><span>，则</span><strong><span>结果不出现</span></strong><span>；若原因不出现，则结果出现。 </span></li><li><span>或（∨）：若</span><strong><span>几个原因中有一个出现</span></strong><span>，则</span><strong><span>结果出现</span></strong><span>；若几个原因</span><strong><span>都不出现</span></strong><span>，则结果</span><strong><span>不出现</span></strong><span>。 </span></li><li><span>与（∧）：若几个原因</span><strong><span>都出现</span></strong><span>，结果</span><strong><span>才出现</span></strong><span>；若其中</span><strong><span>有一个原因不出现</span></strong><span> ，则结果</span><strong><span>不出现</span></strong><span>。</span></li></ul><p><img src="img/3-12.png" referrerpolicy="no-referrer"></p><p><span>5.⭐</span><strong><span>因果图的约束符号</span></strong></p><ul><li><strong><span>E（互斥:exclusive）</span></strong><span>：表示两个原因不会同时成立，两个中</span><strong><span>最多有一个可能成立</span></strong><span> </span></li><li><strong><span>I（包含:inclusive）</span></strong><span>：表示三个原因中</span><strong><span>至少有一个必须成立</span></strong><span> </span></li><li><strong><span>O（唯一:only one）</span></strong><span>：表示两个原因中必须有一个，且仅有一个成立 </span></li><li><strong><span>R（要求:request）</span></strong><span>：表示两个原因，a出现时，b也必须出现，a出现 时，b不可能不出现 </span></li><li><strong><span>M（屏蔽:masking）</span></strong><span>：两个结果，a为1时，b必须是0，当a为0时，b值 不定</span></li></ul><p><img src="img/3-13.png" referrerpolicy="no-referrer"></p><p><strong><span>例6：</span></strong><span>程序的规格说明要求：输入的第一个字符必须是#或* ， 第二个字符必须是一个数字，此情况下进行文件的修改 ；如果第一个字符不是#或*，则给出信息N，如果第二个 字符不是数字，则给出信息M。</span></p><p><span>解题步骤： </span></p><ul><li><span>（1）分析程序的规格说明，列出原因和结果。 </span></li><li><span>（2）找出原因与结果之间的因果关系、原因与原因之 间的约束关系，画出因果图。 </span></li><li><span>（3）将因果图转换成决策表。 </span></li><li><span>（4）根据（3）中的决策表，设计测试用例的输入数据 和预期输出。</span></li></ul><p><span>（1）分析程序规格说明中的原因和结果：</span></p><p><img src="img/3-14.png" referrerpolicy="no-referrer"></p><p><span>（2）画出因果图（编号为10的中间结点是导出结果的进一步原因）</span></p><p><img src="img/3-15.png" referrerpolicy="no-referrer"></p><p><span>（3）将因果图转换成如下所示的决策表：</span></p><p><img src="img/3-16.png" referrerpolicy="no-referrer"></p><p><span>（4）根据决策表中的每一列设计测试用例：</span></p><p><img src="img/3-17.png" referrerpolicy="no-referrer"></p><p><strong><span>例7</span></strong><span>：某电力公司有A、B、C、D四类收费标准, 并规定： 居民用电 &lt;100度/月 按A类收费 ≥100度/月 按B类收费 动力用电 &lt;10000度/月,非高峰,B类收费 ≥10000度/月,非高峰,C类收费 &lt;10000度/月, 高峰,C类收费 ≥10000度/月, 高峰,D类收费</span></p><h4 id='325-场景法'><span>3.2.5 场景法</span></h4><p><span>1.场景法基本概念</span></p><ul><li><span>场景是从用户的角度来描述系统的运行 行为，是系统期望的运行方式</span></li><li><span>场景是由一系列相关的活动组成，场景 中的活动还可以由一系列的场景构成</span></li><li><span>软件系统中流程的控制都由事件触发的</span></li><li><strong><span>每个事件触发时的情景</span></strong><span>便形成了场景</span></li><li><span>同一事件不同的触发顺序和处理结果形成</span><strong><span>事件流</span></strong></li><li><span>通过运用场景来对系统的功能点或业务流程的描述，可以提高测试效果</span></li></ul><p><span>场景法的概念：场景法就是</span><strong><span>模拟用户操作软件</span></strong><span>时的场景， 主要用于</span><strong><span>测试系统的业务流程</span></strong></p><p><span>主要用于</span><strong><span>功能测试</span></strong></p><p><span>2.基于场景的测试方法的原理</span></p><ul><li><span>在场景法中测试一个软件时， 测试流程是软件功能按照正确 的事件流实现的一条正确流程 ，我们把这个称为该软件的基 本流； </span></li><li><span>出现故障或缺陷的过程(考虑可能失败的地方)，就用备选流加以标注，备选流可以是从基本流来的，或是由备选流中 引出的。 </span></li><li><span>每个场景</span><strong><span>至少对应一组</span></strong><span>输入和一个预期输出结果，即</span><strong><span>测试用例</span></strong><span>。</span></li></ul><p><img src="img/3-18.png" referrerpolicy="no-referrer"></p><p><span>3.基于场景测试的难点</span></p><p><span>构建基本流和备选流</span></p><p><span>图中经过用例的每条路径都用基本流和备选流 来表示，</span><strong><span>直黑线表示基本流</span></strong><span>，是经过用例的</span><strong><span>最简单的路径</span></strong><span>。 </span></p><p><span>备选流用不同的色彩表示，一个备选流可能</span><strong><span>从基本流开始</span></strong><span>，在某个特定条件下执行，然后重新</span><strong><span>加入基本流中</span></strong><span>（如备选流1和3）；也可能</span><strong><span>起源于另一个备选流</span></strong><span>（如 备选流2），或者</span><strong><span>终止用例</span></strong><span>而不再重新加入到某个流（如备选流2和4）。</span></p><p><span>4.</span><strong><span>场景法的基本设计步骤</span></strong></p><ul><li><span>（1）根据说明，描述程序的基本流及各项备选流 </span></li><li><span>（2）根据基本流和各项备选流生成不同的场景 </span></li><li><span>（3）对每一个场景生成相应的测试用例 </span></li><li><span>（4）对生成的所有测试用例重新复审，去掉多余 的测试用例，测试用例确定后，对每一个测试用例 确定测试数据值</span></li></ul><p><span>5.</span><strong><span>场景设计的基本原则</span></strong></p><ul><li><strong><span>最少的场景数等于事件流的总数</span></strong><span>，即</span><strong><span>基本流和备选流的总数</span></strong></li><li><span>有且唯一有一个场景</span><strong><span>仅包含基本流</span></strong></li><li><span>对应于某个备选流，</span><strong><span>至少应有一个场景覆盖该备选流</span></strong><span>，且在该场景中应</span><strong><span>尽量避免覆盖其它的备选流</span></strong></li></ul><p><strong><span>例8：</span></strong><span>在网上书店订购书籍时，整个订购过程为：用户登录到网站后，进行书籍的选择， 当选好自己心仪的书籍后进行订购，这 时把所需图书放进购物车，等进行结帐 的时候，用户需要登录自己注册的帐号 ，登录成功后，进行结帐并生成订单， 整个购物过程结束</span></p><p><span>（1）确定基本流和备选流</span></p><p><img src="img/3-19.png" referrerpolicy="no-referrer"></p><p><span>（2）确定场景</span></p><p><img src="img/3-20.png" referrerpolicy="no-referrer"></p><p><span>（3）测试用例</span></p><ul><li><span>V（有效）用于表明这个条件必须是 VALID（有效的）才可执行基本流</span></li><li><span>I（无效）用于表明这种条件下将激活所需备选流。</span></li><li><span>“n/a”（不适用）表明这个条件不适用于测试用例。</span></li></ul><p><img src="img/3-21.png" referrerpolicy="no-referrer"></p><p><span>（4）测试数据</span></p><p><img src="img/3-22.png" referrerpolicy="no-referrer"></p><p><span>6.场景法测试注意要点</span></p><ul><li><span>注意测试主题化，从用户角度出发，保证这个场景在用户使用的过程中可以出现到的</span></li><li><span>注意场景中只出现主流程，只测试简单的基本功能</span></li><li><span>例如密码的合法性等测试点，就不需要出现在场景用例中了</span></li><li><span>尽量不要使得不同的场景覆盖同样的测试点</span></li><li><span>设计测试用例时，</span><strong><span>一个测试用例唯一对应一个场景</span></strong><span>，但一个场景</span><strong><span>可能需要设计多个测试用例</span></strong><span>； </span></li><li><span>基于场景的测试仅需针对输入域展开分析 ，不适于从输出域来展开测试</span></li><li><span>构建场景时可能存在逻辑上可行，而实际 上完全不可能实现的场景。构建场景时尽 量简单，尽量避免同时覆盖多个备选流， 在保证场景可行性的前提下，选择使得场 景尽量简单的事件流的组合</span></li></ul><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2 id='4白盒测试⭐'><span>4.白盒测试⭐</span></h2><h3 id='41-白盒测试的基本概念'><span>4.1 白盒测试的基本概念</span></h3><p><span>1.白盒测试的概念</span></p><ul><li><span>白盒测试主要是测试人员利用程序内部的逻辑结构及有关信息，设计或选择测试用例，对程序所有逻辑路径进行测试，确定实际是否与预期一致。 </span></li><li><span>白盒测试又称为</span><strong><span>结构化测试</span></strong><span>或</span><strong><span>逻辑驱动测试</span></strong><span>。</span></li><li><span>白盒测试只测试</span><strong><span>软件产品的内部结构和处理过程</span></strong><span>，而</span><strong><span>不测试软件产品的功能</span></strong><span>， 用于纠正软件系统在描述、表示和规格上的错误，是进一步测试的前提。</span></li><li><span>覆盖测试与路径测试是白盒测试两大基本策略。</span></li><li><span>程序的结构形式是白盒测试的主要依据。</span></li><li><span>目的是要在程序中找到隐藏的错误。</span></li></ul><p><span>2.控制流图</span></p><p><span>（1）控制流图的定义</span></p><p><span>程序流程图又称框图。在这种图上的框里面常常标明了处理要求或者条件，但是，这些标注在做路径分析时是不重要的。为了了更加突出控制流的结构，需要对程序 流程图做一些简化。这种简化了的程序流程图称做</span><strong><span>控制流图</span></strong><span>。</span></p><p><img src="img/4-1.png" referrerpolicy="no-referrer"></p><p><span>（a）图是一个含有两个出口判断和循环的 程序流程图，我们把它简化成（b）的形式</span></p><p><span>在控制流图中只有两种图形符号，它们是： </span></p><p><span>① </span><strong><span>节点</span></strong><span>：以标有编号的圆圈表示 。它代表了程序流程图中矩形 框表示的处理、菱形表示的两 个到多个出口判断以及两条到 多条流线相交的汇合点。</span></p><p><span>② </span><strong><span>控制流线或弧</span></strong><span>：以箭头表示。 它与程序流程图中的流线是一致的，表明了控制的顺序。为 了方便讨论，控制流线通常标有名字，如图中所标的a、b、c 等。</span></p><p><span>（2）控制流图的特点</span></p><ul><li><span>① </span><strong><span>唯一入口节点</span></strong><span>，即</span><strong><span>源节点</span></strong><span>，表示程序段的开始语句； </span></li><li><span>② 具有</span><strong><span>唯一出口节点</span></strong><span>，即</span><strong><span>汇节点</span></strong><span>，表示程序段的结束语句； </span></li><li><span>③ 节点由带有标号的圆圈表示，表示一个或多个无分支的源程序语句； </span></li><li><span>④ 控制边由带箭头的直线或弧表示，代表控制流的方向。</span></li></ul><p><img src="img/4-2.png" referrerpolicy="no-referrer"></p><p><span>实例：</span></p><p><img src="img/4-3.png" style="zoom:80%;" /></p><p><span>（3）</span><strong><span>控制流图中节点合并</span></strong></p><p><span>有的时候，我们可以把几个节点 合并成一个。</span></p><p><span> </span><strong><span>合并的原则</span></strong><span>：若在一个节点序列中没有分支，则 我们可以把这个序列的节点都合并成一个节点。</span></p><p><img src="img/4-4.png" style="zoom:80%;" /></p><h3 id='42白盒测试方法⭐'><span>4.2白盒测试方法⭐</span></h3><h4 id='421-逻辑覆盖法⭐'><span>4.2.1 逻辑覆盖法⭐</span></h4><p><span>1.逻辑覆盖测试的定义：是</span><strong><span>利用程序的逻辑结构</span></strong><span>设计相应的测试用例。</span></p><p><span>2.</span><strong><span>白盒测试中的逻辑覆盖方法</span></strong></p><p><span>① 语句覆盖  ② 判定覆盖 ③ 条件覆盖 ④ 判定-条件覆盖 ⑤ 条件组合覆盖 ⑥ 路径覆盖</span></p><h4 id='1）语句覆盖'><span>（1）</span><strong><span>语句覆盖</span></strong></h4><p><strong><span>概念：</span></strong><span>语句覆盖是指测试用例能使程序运行时</span><strong><span>每个可执行语句至少被执行一 次</span></strong><span>。在保证</span><strong><span>完成要求</span></strong><span>的情况下，测试用例的数目</span><strong><span>越少越好</span></strong><span>。</span></p><p><span>在控制流图中，要求所有的语句都被运行的充分必要条件是</span><strong><span>覆盖图中的所有节点</span></strong><span>。</span></p><p><span>例1：实现一个简单的数学运算</span></p><p><img src="img/4-5.png" referrerpolicy="no-referrer"></p><p><span>只需设计一个测试用例:</span><strong><span>a=2，b=1 ，c=6</span></strong><span>；即达到了语句覆盖。</span></p><p><img src="img/4-6.png" referrerpolicy="no-referrer"></p><p><span>例2：求解一元二次方程程序的测试问题</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="c" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="c"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include&lt;stdio.h&gt;</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include&lt;math.h&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">int</span> <span class="cm-def">main</span>()</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-3">float</span> <span class="cm-variable">a</span>, <span class="cm-variable">b</span>, <span class="cm-variable">c</span>, <span class="cm-variable">x1</span>, <span class="cm-variable">x2</span>, <span class="cm-variable">mid</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">scanf</span>(<span class="cm-string">" %f, %f, %f"</span>, <span class="cm-operator">&amp;</span><span class="cm-variable">a</span>, <span class="cm-operator">&amp;</span><span class="cm-variable">b</span>, <span class="cm-operator">&amp;</span><span class="cm-variable">c</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">if</span> (<span class="cm-variable">a</span> <span class="cm-operator">!=</span> <span class="cm-number">0</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">mid</span> <span class="cm-operator">=</span> <span class="cm-variable">b</span> <span class="cm-operator">*</span> <span class="cm-variable">b</span> <span class="cm-operator">-</span> <span class="cm-number">4</span> <span class="cm-operator">*</span> <span class="cm-variable">a</span> <span class="cm-operator">*</span> <span class="cm-variable">c</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">if</span> (<span class="cm-variable">mid</span> <span class="cm-operator">&gt;</span> <span class="cm-number">0</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">x1</span> <span class="cm-operator">=</span> (<span class="cm-operator">-</span><span class="cm-variable">b</span> <span class="cm-operator">+</span> <span class="cm-variable">sqrt</span>(<span class="cm-variable">mid</span>)) <span class="cm-operator">/</span> (<span class="cm-number">2</span> <span class="cm-operator">*</span> <span class="cm-variable">a</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">x2</span> <span class="cm-operator">=</span> (<span class="cm-operator">-</span><span class="cm-variable">b</span> <span class="cm-operator">+</span> <span class="cm-variable">sqrt</span>(<span class="cm-variable">mid</span>)) <span class="cm-operator">/</span> (<span class="cm-number">2</span> <span class="cm-operator">*</span> <span class="cm-variable">a</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">printf</span>(<span class="cm-string">"两不等实根"</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">else</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">if</span> (<span class="cm-variable">mid</span> <span class="cm-operator">==</span> <span class="cm-number">0</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">x1</span> <span class="cm-operator">=</span> <span class="cm-operator">-</span><span class="cm-number">1</span> <span class="cm-operator">/</span> (<span class="cm-number">2</span> <span class="cm-operator">*</span> <span class="cm-variable">a</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">x2</span> <span class="cm-operator">=</span> <span class="cm-variable">x1</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">printf</span>(<span class="cm-string">"两等实根："</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">else</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">x1</span> <span class="cm-operator">=</span> <span class="cm-operator">-</span><span class="cm-variable">b</span> <span class="cm-operator">/</span> (<span class="cm-number">2</span> <span class="cm-operator">*</span> <span class="cm-variable">a</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">x2</span> <span class="cm-operator">=</span> <span class="cm-variable">sqrt</span>(<span class="cm-operator">-</span><span class="cm-variable">mid</span>) <span class="cm-operator">/</span> (<span class="cm-number">2</span> <span class="cm-operator">*</span> <span class="cm-variable">a</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">printf</span>(<span class="cm-string">"两复根："</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">printf</span>(<span class="cm-string">"x1 = % f, x2 = % f\n"</span>, <span class="cm-variable">x1</span>, <span class="cm-variable">x2</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 910px;"></div><div class="CodeMirror-gutters" style="display: none; height: 910px;"></div></div></div></pre><p><span>程序流图：</span></p><p><img src="img/4-7.png" style="zoom:80%;" /></p><p><span>测试用例：</span></p><p><span>由控制图可以很容易看到，可以只选3 组（所有的点必须覆盖）：</span></p><ul><li><span>第1组：2，5，3， 执行顺序为： 1，2，3，4，5，10，11，12，13 </span></li><li><span>第2组：1，2，1 执行顺序为： 1，2，3，4，5，6，8，9，11，12，13 </span></li><li><span>第3组：4，2，1 执行顺序为： 1，2，3，4，5，6，7，9，11，12，13</span></li></ul><p><span>⭐</span><strong><span>语句覆盖的缺点：</span></strong></p><p><span>由于这种测试方法仅针对程序逻辑中显式存在的语句，但</span><strong><span>对于隐藏的条件是无法测试</span></strong><span>的。如在多分支的逻辑运算中无法全面的考虑。语句覆盖是</span><strong><span>最弱的逻辑覆盖</span></strong></p><p><span>语句覆盖的优点：</span></p><p><span>可以很直观地从源代码得到测试用例，无须细分每条判定表达式。 </span></p><h4 id='2）判定覆盖'><span>（2）判定覆盖</span></h4><p><strong><span>概念：</span></strong><span>判定覆盖是指设计若干个测试用例能使程序中</span><strong><span>每个判断条件的真值分支和假值分支至少被执行一遍</span></strong><span>。在保证完成要求的情况下，测试用例的数目越少越好。</span></p><p><span>例3：</span></p><p><img src="img/4-9.png" referrerpolicy="no-referrer"></p><p><span>由控制流图可以很容易看到，可以只选4组（所有的边必须覆盖）：</span></p><ul><li><span>第1组：2，5，3（a！=0,mid&gt;0）， 执行顺序为： 1，2，3，4，5，10，11，12，13 </span></li><li><span>第2组：1，2，1 （a！=0,mid=0）， 执行顺序为： 1，2，3，4，5，6，8，9，11，12，13 </span></li><li><span>第3组：4，2，1 (a！=0,mid&lt;0）， 执行顺序为： 1，2，3，4，5，6，7，9，11，12，13 </span></li><li><span>第4组：0，2，1 (a=0) 执行顺序为： 1，2，3，13</span></li></ul><p><span>例4：</span></p><p><img src="img/4-10.png" referrerpolicy="no-referrer"></p><p><span>测试用例: a=2，b=1，c=6； a=-1，b=1，c=-3； 满足判定覆盖的要求。 但</span><strong><span>如果把a&gt;0错写成a&lt;0,仍然覆盖了所有分支</span></strong><span>。所以，判定覆盖仍有漏洞。 需要考虑各个条件的取值情况。</span></p><p><span>判定覆盖的优点：</span></p><p><span>判定覆盖具有比语句覆盖更强的测试能力。同样判定覆盖也具有和语句覆盖一样的简单性，</span><strong><span>无须细分每个判定</span></strong><span>就可以得到测试用例。</span></p><p><span>判定覆盖的缺点：</span></p><p><span>大部分的判定语句是由</span><strong><span>多个逻辑条件组合</span></strong><span>而成，若仅判断其整个最终结果，而</span><strong><span>忽略每个条件的取值情况</span></strong><span>，必然会</span><strong><span>遗漏部分测试路径</span></strong><span>。判定覆盖仍是弱的逻辑覆盖。</span></p><h4 id='3）条件覆盖'><span>（3）</span><strong><span>条件覆盖</span></strong></h4><p><strong><span>概念：</span></strong><span>条件覆盖是指设计若干个测试用例，执行被测试程序时，程序中</span><strong><span>每个判断条件</span></strong><span>中的</span><strong><span>每个条件的可能取值至少被执行一遍</span></strong><span>。</span></p><p><span>例5：</span></p><p><img src="img/4-11.png" referrerpolicy="no-referrer"></p><p><span>判断M表达式: 设条件 a&gt;0 取真 记为 T1 假 F1；条件 b&gt;0 取真记为 T2 假 F2 </span></p><p><span>判断Q表达式: 设条件 a&gt;1 取真 记为 T3 假 F3；条件 c&gt;1 取真 记为 T4 假 F4</span></p><figure><table><thead><tr><th><span>测试用例</span></th><th><span>覆盖条件</span></th><th><span>具体取值条件</span></th></tr></thead><tbody><tr><td><span>a=2,b=-1,c=-2</span></td><td><span>T1, F2, T3, F4</span></td><td><span>a&gt;0,b&lt;=0, a&gt;1,c&lt;=1</span></td></tr><tr><td><span>a=-1,b=2,c=3</span></td><td><span>F1, T2, F3, T4</span></td><td><span>a&lt;=0,b&gt;0, a&lt;=1,c&gt;1</span></td></tr></tbody></table></figure><p><span>条件覆盖的优点：</span></p><p><span>增加了</span><strong><span>对条件判定情况</span></strong><span>的测试，增加了测试路径</span></p><p><span>⭐条件覆盖的缺点：</span></p><p><strong><span>条件覆盖不一定包含判定覆盖</span></strong><span>。例如，我们刚才设计的用例就</span><strong><span>没有覆盖判断M的Y分支和判断Q的N分支</span></strong><span>。 条件覆盖</span><strong><span>只能保证每个条件至少有一次为真</span></strong><span>，而不考虑所有的判定结果。</span></p><h4 id='4）判定-条件覆盖'><span>（4）判定-条件覆盖</span></h4><p><strong><span>概念：</span></strong><span>设计足够的测试用例，使得判断条件中的</span><strong><span>所有条件可能至少执行一次取值</span></strong><span>，同时，</span><strong><span>所有判断的可能结果至少执行一次</span></strong><span>。</span></p><p><span>例6：</span></p><p><img src="img/4-12.png" referrerpolicy="no-referrer"></p><p><span>我们设计的测试用例要满足如下条件： ① 所有条件可能</span><strong><span>至少执行一次取值</span></strong><span>；② 所有判断的</span><strong><span>可能结果至少执行一次</span></strong><span>。</span></p><figure><table><thead><tr><th><span>测试用例</span></th><th><span>覆盖条件</span></th><th><span>覆盖判断</span></th></tr></thead><tbody><tr><td><span>a=2,b=1,c=6</span></td><td><span>T1, T2, T3, T4</span></td><td><span>M的Y分支和Q的Y分支</span></td></tr><tr><td><span>a=-1,b=-2,c=-3</span></td><td><span>F1, F2, F3, F4</span></td><td><span>M的N分支和Q的N分支</span></td></tr></tbody></table></figure><p><span>判定条件覆盖从表面来看，它测试了所有条件的取值，但是实际上</span><strong><span>某些条件掩盖了另一些条件</span></strong><span>。</span></p><p><span>例如对于条件表达式</span><strong><span>(a&gt;0)&amp;&amp;(b&gt;0)</span></strong><span> 来说，必须两个条件都满足才能确定表达式为真。如果（a&gt;0）为假则一般的编译器不在判断是否b&gt;0了。</span></p><p><span>对于第二个表达式（a&gt;1) || (c&gt;1)来说，若a&gt;1测试结果为真，就认为表达式的结果为真， 这时不再检查（c&gt;1）条件了。</span></p><p><span>因此，采用判定条件覆盖，</span><strong><span>不一定能够查出逻辑表达式中的错误</span></strong></p><p><strong><span>判定－条件覆盖的优点：</span></strong></p><p><span>能同时满足判定、条件两种覆盖标准。</span></p><p><strong><span>判定－条件覆盖的缺点：</span></strong></p><p><strong><span>未考虑条件的组合情况</span></strong></p><h4 id='5）条件组合覆盖'><span>（5）条件组合覆盖</span></h4><p><strong><span>概念：</span></strong><span>指设计若干个测试用例 ，执行被测试程序时，程序中</span><strong><span>每个判断条件的内部判断式</span></strong><span>的</span><strong><span>各种真假组合可能</span></strong><span>都至少被执行一遍。</span></p><p><span>例7：</span></p><p><img src="img/4-12.png" referrerpolicy="no-referrer"></p><p><span>我们把每个判断中的所有条件进行组合，设计组合条件如表所示，而我们设计的测试用例就要</span><strong><span>包括所有的组合条件</span></strong><span>。</span></p><figure><table><thead><tr><th><span>编号</span></th><th><span>覆盖条件取值</span></th><th><span>判定条件取值</span></th><th><span>具体条件取值</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>T1,T2</span></td><td><span>M取Y</span></td><td><span>a&gt;0,b&gt;0</span></td></tr><tr><td><span>2</span></td><td><span>T1,F2</span></td><td><span>M取N</span></td><td><span>a&gt;0,b&lt;=0</span></td></tr><tr><td><span>3</span></td><td><span>F1,T2</span></td><td><span>M取N</span></td><td><span>a&lt;=0,b&gt;0</span></td></tr><tr><td><span>4</span></td><td><span>F1,F2</span></td><td><span>M取N</span></td><td><span>a&lt;= 0,b&lt;=0</span></td></tr><tr><td><span>5</span></td><td><span>T3,T4</span></td><td><span>Q取Y</span></td><td><span>a&gt;1,c&gt;1</span></td></tr><tr><td><span>6</span></td><td><span>T3,F4</span></td><td><span>Q取Y</span></td><td><span>a&gt;1,c&lt;=1</span></td></tr><tr><td><span>7</span></td><td><span>F3,T4</span></td><td><span>Q取Y</span></td><td><span>a&lt;=1,c&gt;1</span></td></tr><tr><td><span>8</span></td><td><span>F3,F4</span></td><td><span>Q取N</span></td><td><span>a&lt;=1,c&lt;=1</span></td></tr></tbody></table></figure><p>&nbsp;</p><p><span>测试用例：</span></p><figure><table><thead><tr><th><span>测试用例</span></th><th><span>覆盖条件</span></th><th><span>覆盖判断</span></th><th><span>覆盖组合</span></th></tr></thead><tbody><tr><td><span>a=2,b=1,c=6</span></td><td><span>T1, T2, T3, T4</span></td><td><span>M取Y分支，Q 取Y分支</span></td><td><span>1, 5</span></td></tr><tr><td><span>a=2,b= -1,c= -2</span></td><td><span>T1, F2, T3, F4</span></td><td><span>M取N分支，Q 取Y分支</span></td><td><span>2,  6</span></td></tr><tr><td><span>a=-1,b=2,c=3</span></td><td><span>F1, T2, F3, T4</span></td><td><span>M取N分支，Q 取Y分支</span></td><td><span>3, 7</span></td></tr><tr><td><span>a= -1,b= -2,c= -3</span></td><td><span>F1, F2, F3, F4</span></td><td><span>M取N分支，Q 取N分支</span></td><td><span>4, 8</span></td></tr></tbody></table></figure><p><span>条件组合覆盖的优点</span></p><p><span>条件组合覆盖准则</span><strong><span>满足判定覆盖、条件覆盖和判定/条件覆盖准则</span></strong><span>。</span></p><p><span>条件组合覆盖的缺点</span></p><p><span>线性地增加了测试用例的数量</span></p><h4 id='6）路径覆盖'><span>（6）路径覆盖</span></h4><p><span>概念：设计所有的测试用例，来覆盖程序中的</span><strong><span>所有可能的执行路径</span></strong></p><ul><li><span>路径覆盖包含了分支覆盖。</span></li><li><span>对一般的程序来说，要达到100%的路径覆盖率</span><strong><span>几乎是不可能</span></strong><span>的。</span></li><li><strong><span>判断不可行路径</span></strong><span>也是</span><strong><span>非常困难</span></strong><span>。程序中往往存在着大量不可行路径。因此，路径覆盖测试不太实用。</span></li></ul><p><span>例8：</span></p><p><img src="img/4-13.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><figure><table><thead><tr><th><span>测试用例</span></th><th><span>覆盖组合</span></th><th><span>覆盖路径</span></th></tr></thead><tbody><tr><td><span>a=2,b=1,c=6</span></td><td><span>1，5</span></td><td><span>1-2-4</span></td></tr><tr><td><span>a=1,b=1,c=-3</span></td><td><span>1，8</span></td><td><span>1-2-5</span></td></tr><tr><td><span>a=-1,b=2,c=3</span></td><td><span>4，7</span></td><td><span>1-3-4</span></td></tr><tr><td><span>a=-1,b=-2,c=-3</span></td><td><span>4，8</span></td><td><span>1-3-5</span></td></tr></tbody></table></figure><p><span>3.路径覆盖的优点：</span></p><p><span>这种测试方法可以对程序进行彻底的测试，比前面五种的覆盖面都广。</span><span>	</span></p><p><span>路径覆盖的缺点：</span></p><p><span>需要设计大量、复杂的测试用例，使得工作量呈</span><strong><span>指数级增长</span></strong><span>，</span><strong><span>不见得把所有的条件组合都覆盖</span></strong><span>。</span></p><p>&nbsp;</p><p><span>⭐</span><strong><span>部分覆盖准则间的关系</span></strong></p><p><img src="img/4-14.png" referrerpolicy="no-referrer"></p><p><span>4.条件组合覆盖结合路径覆盖</span></p><p><img src="img/4-15.png" style="zoom:67%;" /></p><h4 id='422-基本路径测试法⭐'><span>4.2.2 基本路径测试法⭐</span></h4><p><span>1.为什么要引入基本路径测试法？</span></p><p><span>逻辑覆盖测试主要关注的是程序内部的逻辑结构 ，最彻底的测试就是覆盖程序中的每一条路径， 对于一个较为复杂的程序要做到完全的路径覆盖测试是不可能实现的。</span></p><p><span>因此我们希望将要覆盖的路径数压缩到一个有限的范围内，通过合理地选择一组穿过程序的测试路径，以实现达到某种测试度量 ，而确保程序中每一个语句都执行一次。</span></p><p><span>2.什么是基本路径测试法？</span></p><p><span>基本路径测试方法使测试用例设计者产生一种过程设计的</span><strong><span>逻辑复杂性测度</span></strong><span>，这种测度为执行路径的基本集的定义提供指导。 </span></p><p><span>执行该基本集所生成的测试用例保证程序中的每一条语句至少执行一次。</span></p><p><span>3.什么是独立程序路径？</span></p><p><span>独立路径是任何贯穿程序的、至少引入 一组新的处理语句或一个新的条件的路径。</span></p><p><span>从</span><strong><span>控制流图</span></strong><span>来看，一条独立路径是至</span><strong><span>少包含有一条在其它独立路径中从未有过的边的路径</span></strong><span>。路径可以用控制流图中的节点序列来表示。</span></p><p><span>3.</span><strong><span>⭐关于控制流图的说明</span></strong></p><p><span>（1）流程图中的 一组顺序处理框， 在控制流图中可 以被映射成为一 个单一节点</span></p><p><img src="img/4-16.png" referrerpolicy="no-referrer"></p><p><span>（2）若判断中的条件表达式是</span><strong><span>复合条件</span></strong><span>时，需要改复合条件为</span><strong><span>一系列只有单个条件的判断</span></strong></p><p><img src="img/4-17.png" referrerpolicy="no-referrer"></p><p><img src="img/4-18.png" referrerpolicy="no-referrer"></p><p><span>4.⭐</span><strong><span>程序圈（环形）复杂度</span></strong></p><p><span>（1）作用：</span><strong><span>找出有多少条路径</span></strong></p><p><span>（2）概念：程序的圈（环形）复杂度是一种描述程序逻辑复杂度的标准，给出了程序基本路径集中的独立路径条数，这是确保程序中每个可执行语句至少执行一次所必需的测试</span><strong><span>用例数目的上界</span></strong><span>。</span></p><p><span>（3）⭐</span><strong><span>计算方法</span></strong></p><p><span>给定一个控制流图G，设其圈（环形）复杂度为V(G)，有三种常见 的计算方法来求解V(G)。</span></p><ul><li><span>①  V(G)=</span><strong><span>E-N+2</span></strong><span>，其中：E是控制流图G中</span><strong><span>边的数量</span></strong><span>，N是控制流图中</span><strong><span>节点的数目</span></strong></li><li><span>② V(G)=</span><strong><span>P+1</span></strong><span>，其中P是控制流图G中</span><strong><span>判断节点的数目</span></strong></li><li><span>③ V(G)=</span><strong><span>A</span></strong><span>(+1)， 其中A是控制流图G中区域的数目。由</span><strong><span>边和结点围成的区域</span></strong><span>叫做区域。在控制流图中，</span><strong><span>控制流图外的区域也应记为一个区域</span></strong></li></ul><p><span>例9：给出该图的独立路径</span></p><p><img src="img/4-19.png" referrerpolicy="no-referrer"></p><p><img src="img/4-20.png" referrerpolicy="no-referrer"></p><p><span>上图中，一组独立的路径是： </span></p><ul><li><span>path1：1 - 11 </span></li><li><span>path2：1 - 2 - 3 - 4 - 5 - 10 - 1 - 11 </span></li><li><span>path3：1 - 2 - 3 - 6 - 8 - 9 - 10 - 1 - 11 </span></li><li><span>path4：1 - 2 - 3 - 6 - 7 - 9 - 10 - 1 – 11 </span></li></ul><p><span>路径 path1，path2，path3，path4组成了控制流图的一个基本路径集。</span></p><p><span>5.</span><strong><span>独立路径获取</span></strong></p><p><span>（1）确定主路径</span></p><p><span>在所有路径中找到一条最复杂的路径作为基础路径（简称为主路径）</span></p><p><span>复杂性体现在： </span></p><ul><li><span>应包含</span><strong><span>尽可能多的判定节点</span></strong><span>（包括条件判定和循环判定节点）</span></li><li><span>判定意味着程序执行路径分支。因此 ，包含越多的判定则表明该路径越复杂</span></li><li><span>该路径应包含</span><strong><span>尽可能复杂的判定表达式</span></strong><span>（ 当判定节点数量相同时）</span></li><li><span>该路径应对应尽可能</span><strong><span>高的执行概率</span></strong></li><li><span>该路径应包含</span><strong><span>尽可能多的语句</span></strong></li></ul><p><span>（2）具体做法</span></p><ul><li><p><span>采用深度优先搜索策略</span></p></li><li><p><span>若遇到判定节点，可遵循“</span><strong><span>先遍历false分支</span></strong><span>，</span><strong><span>再遍历true分</span></strong><span>支”的原则</span></p></li><li><p><span>需根据“基本路径”的定义对每一条路径进行检查， 看其中是否包含了之前其它路径中不曾出现过的边。 若否，则将其去除</span></p></li><li><p><span>若程序需要输出多条基本路径，按照路径长度由小到大排序输出；若两个路径的长度相等，则按相对应位置的数字大小由低到高排列： </span></p><p><span>	</span><span>1,3,6,5和1,3,4,5两条路径，后者应该先输出； </span></p><p><span>	</span><span>1,10,8,3,4和1,9,10,3,4两条路径，后者应该先输出。</span></p></li></ul><p><span>（3）不可行路径</span></p><p><span>在设计程序时若存在缺陷，将导致得到的路径是在</span><strong><span>事实上完全不可能执行到的路径。</span></strong><span> </span></p><p><span>比如，构成判定表达式的多个简单判定条件之间存在一定关联，即在多个简单判定条件的取值相互约束时，可能导致路径不可行。</span></p><p><span>6.</span><strong><span>⭐独立路径测试的步骤</span></strong></p><ul><li><span>① 导出程序控制流图 </span></li><li><span>② 求出程序圈复杂度 </span></li><li><span>③ 设计测试用例</span></li></ul><p><span>例10：为如下程序设计独立路径测试用例</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">1 int main()</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">2  {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">3<span class="cm-tab" role="presentation" cm-text="	">   </span>int num1 = 0, num2 = 0, score = 100;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">4<span class="cm-tab" role="presentation" cm-text="	">   </span>int i;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">5<span class="cm-tab" role="presentation" cm-text="	">   </span>char str;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">6<span class="cm-tab" role="presentation" cm-text="	">   </span>scanf("%d, %c\n", &amp;i, &amp;str);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">7<span class="cm-tab" role="presentation" cm-text="	">   </span>while (i &lt; 5)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">8<span class="cm-tab" role="presentation" cm-text="	">   </span>{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">9<span class="cm-tab" role="presentation" cm-text="	">   </span><span class="cm-tab" role="presentation" cm-text="	">    </span>if (str == "T")</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">10<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>num1++;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">11<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">    </span>else if (str == "F")</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">12<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">    </span>{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">13<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>score = score - 10;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">14<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>num2++;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">15<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">    </span>}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">16<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">    </span>i++;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">17<span class="cm-tab" role="presentation" cm-text="	">  </span>}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">18<span class="cm-tab" role="presentation" cm-text="	">  </span>printf("num1 = %d, num2 = %d, score = %d\n", num1, num2, score);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">19 }</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 494px;"></div><div class="CodeMirror-gutters" style="display: none; height: 494px;"></div></div></div></pre><p><span>（1）导出程序控制流图</span></p><p><img src="img/4-21.png" referrerpolicy="no-referrer"></p><p><span>（2）求出程序环形复杂度</span></p><p><span>根据程序环形复杂度的计算公式，求出程序路径集 合中的独立路径数目。 </span></p><p><span>公式1：V(G)=10-8+2，其中10是控制流图G中边的数量，8是控制流图中节点的数目。 </span></p><p><span>公式2：V(G)=3+1，其中3是控制流图G中判断节点的数目。 </span></p><p><span>公式3：V(G)=4，其中4是控制流图G中区域的数目。 因此，控制流图G的环形复杂度是4，需要4条独立路 径组成基本路径集合，并由此得到能够覆盖所有程序语 句的测试用例。</span></p><p><span>（3）设计测试用例</span></p><p><span>根据上面环形复杂度的计算结果，源程序的基本路径集合中有4条独立路径： </span></p><p><span>路径1：7-&gt;18 </span></p><p><span>路径2：7-&gt;9-&gt;10-&gt;16-&gt;7-&gt;18 </span></p><p><span>路径3：7-&gt;9-&gt;11-&gt;15-&gt;16-&gt;7-&gt;18 </span></p><p><span>路径4：7-&gt;9-&gt;11-&gt;13-&gt;14-&gt;15-&gt;16-&gt;7-&gt;18 </span></p><p><span>根据上述4条独立路径，设计测试用例组。测试用例组中的4个测试 用例作为程序输入数据，能够遍历这4条独立路径。对于源程序中的 循环体，测试用例组中的输入数据使其执行零次或一次。</span></p><p><span>测试用例如下：</span></p><p><img src="img/4-22.png" referrerpolicy="no-referrer"></p><p><span>例11：用基本路径法测试以下程序片段</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">void DoWork(int x, int y, int z) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">1<span class="cm-tab" role="presentation" cm-text="	">   </span>int k = 0, j = 0;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">2<span class="cm-tab" role="presentation" cm-text="	">   </span>if ((x &gt; 3) &amp;&amp; (z &lt; 10)) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">3<span class="cm-tab" role="presentation" cm-text="	">   </span><span class="cm-tab" role="presentation" cm-text="	">    </span>k = x * y - 1;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">4<span class="cm-tab" role="presentation" cm-text="	">   </span><span class="cm-tab" role="presentation" cm-text="	">    </span>j = sqrt(k);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">5<span class="cm-tab" role="presentation" cm-text="	">   </span>}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">6<span class="cm-tab" role="presentation" cm-text="	">   </span>if ((x == 4) || (y &gt; 5)) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">7<span class="cm-tab" role="presentation" cm-text="	">   </span><span class="cm-tab" role="presentation" cm-text="	">    </span>j = x * y + 10;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">8<span class="cm-tab" role="presentation" cm-text="	">   </span>}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">9<span class="cm-tab" role="presentation" cm-text="	">   </span>j = j % 3;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">10 }</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 286px;"></div><div class="CodeMirror-gutters" style="display: none; height: 286px;"></div></div></div></pre><p><span>(1)程序流图如下：</span></p><p><img src="img/4-23.png" referrerpolicy="no-referrer"></p><p><span>（2）圈复杂度：程序流图共有4个判定节点，故圈复杂度V(G)=4+1= 5</span></p><p><span>（3）设计测试用例</span></p><p><span>根据圈复杂度，基本路径集合中有4条独立路径：</span></p><p><span>①1-2A-2B-5-6A-7-8-9</span></p><p><span>②1-2A-2B-3-4-5-6A-7-8-9</span></p><p><span>③1-2A-2B-5-6A-6B-8-9</span></p><p><span>④1-2A-2B-5-6A-6B-7-8-9</span></p><p><span>⑤1-2A-5-6A-6B-8-9</span></p><p><span>测试用例如下：</span></p><figure><table><thead><tr><th><span>测试用例</span></th><th><span>输入：x,y,z</span></th><th><span>预期结果：j,k</span></th><th><span>执行路径</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>4, 4, 11</span></td><td><span>j=26, k=0</span></td><td><span>①</span></td></tr><tr><td><span>2</span></td><td><span>4, 5, 9</span></td><td><span>j=30, k=19</span></td><td><span>②</span></td></tr><tr><td><span>3</span></td><td><span>5, 4, 11</span></td><td><span>j=0, k=0</span></td><td><span>③</span></td></tr><tr><td><span>4</span></td><td><span>5, 6, 11</span></td><td><span>j=40, k=0</span></td><td><span>④</span></td></tr><tr><td><span>5</span></td><td><span>2, 4, 9</span></td><td><span>j=0, k=0</span></td><td><span>⑤</span></td></tr></tbody></table></figure><p><span>7.</span><strong><span>路径选取的一般原则</span></strong></p><ul><li><span>（1）必须满足逻辑覆盖的最低标准。</span><strong><span>语句覆盖加判定覆盖</span></strong><span>作为路径选取的最低标准</span></li><li><span>（2）对单循环、嵌套循环、串接循环和不规则循环，给出相应的路径选取规则。</span></li><li><span>（3）选取最简单的、具有一定功能含义的路径。 </span></li><li><span>（4）由简到繁，若有可能，先考虑不含循环的测试路径，然后补充对循环的测试； </span></li><li><span>（5）尽可能选取短路径；</span></li><li><span>（6）选取没有明显功能含义的路径，此时要研究这样的路径为什么存在，为什么没有通过功能上合理的路径得到覆盖。</span></li></ul><h3 id='43-小结'><span>4.3 小结</span></h3><ul><li><span>白盒测试是软件测试技术中最基本的方法之一，白盒测试的核心是针对被测单元内部是如何进行工作的测试，是以覆盖测试与路径测试为基本策略。 </span></li><li><span>白盒测试是一种被广泛使用的逻辑测试方法，是由程序内部逻辑驱动的一种单元测试方法。只有对程序内部十分了解才能进行适度有效的白盒测试。但是贯穿在程序内部的逻辑存在着不确定性和无穷性，尤其对于大规模复杂软件。因此我们不能穷举所有的逻辑路径，即使穷举也未必会带来好运</span></li><li><span>那么正确使用白盒测试，就要先从代码分析入手，根据不同的代码逻辑规则、语句执行情况，选用适合的覆盖方法。任何一个高效的测试用例，都是针对具体测试场景的。逻辑测试不是片面的测试正确的结果或是测试错误的结果，而是尽可能全面地覆盖每一个逻辑路径。</span></li></ul><p>&nbsp;</p><ul><li><span>语句覆盖：语句覆盖就是设计若干个测试用例，运行被测试程序，使得每一 条可执行语句至少执行一次； </span></li><li><span>判定覆盖（也称为分支覆盖）：设计若干个测试用例，运行所测程序，使程 序中每个判断的取真分支和取假分支至少执行一次； 条件覆盖：设计足够多的测试用例，运行所测程序，使程序中每个判断的每 个条件的每个可能取值至少执行一次；</span></li><li><span>判定-条件覆盖：设计足够多的测试用例，运行所测程序，使程序中每个判断 的每个条件的所有可能取值至少执行一次，并且每个可能的判断结果也至少 执行一次，换句话说，即是要求各个判断的所有可能的条件取值组合至少执行一次； </span></li><li><span>条件组合测试：设计足够多的测试用例，运行所测程序，使程序中每个判断 的所有可能的条件取值组合至少执行一次；</span></li><li><span>路径测试：设计足够多的测试用例，运行所测程序，要覆盖程序中所有可能的路径。</span></li></ul><p>&nbsp;</p><h2 id='5单元测试'><span>5.单元测试</span></h2><h3 id='51-单元测试的基本概念'><span>5.1 单元测试的基本概念</span></h3><p><span>1.单元是什么？</span></p><p><span>IEEE：指软件设计说明中一个可独立测试的元素，是程序中一个逻辑上独立的部分，它不能再分解为其它软件成分。</span></p><p><span>实践中：指软件源代码中单个的函数，源文件或类。</span></p><p><span>2.单元测试是什么？</span></p><p><span>单元测试又称</span><strong><span>模块测试</span></strong><span>，是针对软件设计的最小单元，进行功能、性能、接口 和设计等正确性检验的测试工作。</span></p><p><span>单元测试的内容包括：单元的内部结构、 单元的功能和可观测的行为</span></p><p><span>把测试比作是清洗一台机器： 系统测试就是清除机器外面的尘土。 集成测试就是保证机器各个部件的接头处干净。 单元测试就是清洗各个零件的内部。</span></p><p><span>3.单元测试的对象</span></p><ul><li><span>结构化编程语言：单元测试对象是</span><strong><span>函数或者子过程。</span></strong><span> </span></li><li><span>面向对象语言：单元测试对象是</span><strong><span>类或者类的方法</span></strong><span>。 如一个菜单、屏幕显示界面或对话框等</span></li></ul><p><span>4.单元测试的目的</span></p><ul><li><span>① 单元测试能更准更全面地找到错误，显著提 高软件质量；</span></li><li><span>② 单元测试能够大量削减开发时间和成本； 单元测试能尽早发现错误</span></li></ul><p><span>5.单元测试原则</span></p><ul><li><span>应该</span><strong><span>尽早</span></strong><span>地进行软件单元测试</span></li><li><span>应该保证单元测试的</span><strong><span>可重复性</span></strong></li><li><strong><span>尽可能</span></strong><span>地采用</span><strong><span>测试自动化</span></strong><span>的手段来支持单元测试活动</span></li></ul><p><span>6.单元测试的意义</span></p><p><span>（1）对软件的设计实现：保障软件质量； 降低成本； 更清晰的认识设计流程； 架构反思； 代码易于维护； 改善团队沟通；</span></p><p><span>（2）对软件开发者：更清晰地认识设计规格说明书； 提高代码静态分析技 能； 编码规范； 学习机会；</span></p><h4 id='52-单元测试内容'><span>5.2 单元测试内容</span></h4><p><span>1.在单元测试时，测试者需要依据</span><strong><span>详细设计说明书</span></strong><span>和</span><strong><span>源程序清单</span></strong><span>，了解该模块的I/O条件和模块的逻辑结构，</span><strong><span>主要采用白盒测试</span></strong><span>的测试用例，</span><strong><span>辅之以黑盒测试</span></strong><span>的测试用例，使之对任何合理的输入和不合理的输入，都能鉴别和响应。</span></p><p><span>2.单元测试的内容</span></p><p><img src="img/5-1.png" referrerpolicy="no-referrer"></p><p><span>3.</span><strong><span>单元测试执行人员</span></strong></p><p><span>单元测试</span><strong><span>可以是开发者本人</span></strong><span>执行，也可以是独立的专业测试人员执行。</span></p><p><span>两者各有优势：</span></p><p><strong><span>建议开发人员</span></strong><span>必须</span><strong><span>完整地做单元测试</span></strong><span>，同时</span><strong><span>测试人员</span></strong><span>针对</span><strong><span>重点模块实施独立的单元测试</span></strong></p><h3 id='53-单元测试方法及环境'><span>5.3 单元测试方法及环境</span></h3><p><span>1.静态测试技术</span></p><p><span>不运行被测试程序， 对代码通过检查、阅读进行分析。</span></p><p><span>代码走查-代码审查-代码评审</span></p><p><span>2.动态测试技术</span></p><p><span>动态测试需要真正将程序运行起来，需要设计系 列的测试用例保证测试的完整性和有效性。</span></p><p><span>方法：白盒测试、黑盒（灰盒）测试</span></p><p><span>3.单元结构测试</span></p><p><span>单元结构测试关注的是代码内部的执行情况，关 注代码执行的覆盖率。 单元结构测试方法主要采用</span><strong><span>白盒测试。</span></strong></p><p><span>4.单元功能测试</span></p><p><span>单元功能测试主要采用</span><strong><span>黑盒测试</span></strong><span>方法。</span></p><p><span>5.单元测试环境</span></p><p><span>基本单元本身不是一个独立的程序，自己不能运行，要靠其它部分来调用和驱动</span></p><p><strong><span>驱动模块 (Driver)</span></strong><span>：被测基本单元的主程序。即对底层或子层模块进行测试所编写的调用这些模块的程序。</span></p><p><strong><span>桩模块 (Stub)：</span></strong><span>用来代替被测基本单元调用的其它基本单元。即对顶层或上层模块进行测试时所编写的替代下层 模块的程序。</span></p><h3 id='54-单元测试策略'><span>5.4 单元测试策略</span></h3><h4 id='541-自顶向下的单元测试不推荐）'><span>5.4.1 </span><strong><span>自顶向下的单元测试</span></strong><span>（不推荐）</span></h4><p><span>1.方法：先对</span><strong><span>最顶层</span></strong><span>的基本单元进行测试，把</span><strong><span>所有调用的单元做成桩模块</span></strong><span>。然后再对第二层的基本单元进行测试，使用上面</span><strong><span>已测试的单元做驱动模块</span></strong><span>。依此类推直到测试完所有基本单元。</span></p><p><span>2.优点：在集成测试前</span><strong><span>提供早期的集成途径</span></strong><span>。在执行上和详细设计的顺序一致。</span><strong><span>不需要开发驱动模块。</span></strong></p><p><span>3.缺点：随着测试的进行，测试过程越来越复杂， 开发和维护成本增加。</span></p><p><span>4.总结：比孤立单元测试的成本高很多，</span><strong><span>不是单元测试的一个好的选择</span></strong><span>。</span></p><h4 id='542-自底向上的单元测试较好）'><span>5.4.2 </span><strong><span>自底向上的单元测试</span></strong><span>（较好）</span></h4><p><span>1.方法：先对</span><strong><span>最底层的基本单元</span></strong><span>进行测试，</span><strong><span>模拟调用该单元的单元做驱动模块</span></strong><span>。然后再对上面一层进行测试，用下面</span><strong><span>已被测试过的单元做桩模块</span></strong><span>。 依此类推，直到测试完所有单元。</span></p><p><span>2.优点：在集成测试前提供系统早期的集成途径。 </span><strong><span>不需要开发桩模块</span></strong><span>。</span></p><p><span>3.缺点：随着测试的进行，测试过程越来越复杂</span></p><p><span>4.总结：</span><strong><span>比较合理的单元测试策略</span></strong><span>，但测试周期较长。</span></p><h4 id='543-孤立单元测试最佳）'><span>5.4.3 孤立单元测试（最佳）</span></h4><p><span>1.方法：不考虑每个单元与其它单元之间的关系，为每个单元设计桩模块或驱动模块。每个模块进行独立的单元测试。 </span></p><p><span>2.优点：简单、容易操作，可达到高的结构覆盖率。</span></p><p><span>3.缺点：</span><strong><span>不提供一种系统早期的集成途径</span></strong></p><p><span>4.总结：</span><strong><span>最好的单元测试策略</span></strong><span>。</span></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='6集成测试'><span>6.集成测试</span></h2><h3 id='61-集成测试的基本概念'><span>6.1 集成测试的基本概念</span></h3><p><span>1.集成测试的引入</span></p><p><span>软件在系统集成时会经常有这样的情况发生： 每个模块都能单独工作 ，但这些模块集成在一起 之后却不能正常工作； 或是系统集成后虽可以正常运行，但系统的容错 性、安全性以及整体性却得不到保障，系统不能 长时间运行等等。 </span></p><p><span>这就需要进行集成测试和系统测试 ，以找出其中的软件缺陷，来提高整个软件的质量和可靠性。</span></p><p><strong><span>2.什么是集成测试？</span></strong></p><ul><li><span>也叫做组装测试、联合测试、子系统测试和部件测试。 </span></li><li><span>集成测试是在单元测试的基础上，将所有模块按照</span><strong><span>概要设计</span></strong><span>要求组装成为</span><strong><span>子系统或系统</span></strong><span>，进行集成测试。 </span></li><li><span>最简单的形式是：两个已经测试过的单元组合成 一个组件，并测试它们之间的接口。 </span></li><li><span>实际操作中，通常集成测试的对象为模块级的集 成和子系统间的集成，其中子系统集成测试称为 组件测试。</span></li></ul><p><span>3.</span><strong><span>灰盒测试</span></strong></p><ul><li><span>灰盒测试，是介于白盒测试与黑盒测试之间的一种测试。 </span></li><li><strong><span>灰盒测试</span></strong><span>多用于</span><strong><span>集成测试</span></strong><span>阶段，不仅关注输出、输入的正确性，同时也关注程序内部的情况。 </span></li><li><span>灰盒测试不像白盒那样详细、完整，但又比黑盒测试更关注程序的内部逻辑，常常是</span><strong><span>通过</span></strong><span>一些</span><strong><span>表征性的现象</span></strong><span>、事件、标志来</span><strong><span>判断内部</span></strong><span>的运行状态。</span></li></ul><p><span>4.为什么要进行集成测试？</span></p><ul><li><span>集成测试在单元测试和系统测试间起到承上启下 的作用，既能</span><strong><span>发现</span></strong><span>大量单元测试阶段不易发现的</span><strong><span>接口类错误</span></strong><span>，又可以</span><strong><span>保证</span></strong><span>在进入系统测试前</span><strong><span>及早发现错误</span></strong><span>，减少损失。</span></li><li><span>单元测试通常是单人执行，而集成测试通常是多人执行或第三方执行。集成测试通过模块间的交互作用和不同人的理解和交流，更容易发现</span><strong><span>实现上、理解上的不一致和差错。</span></strong></li></ul><p><span>5.</span><strong><span>⭐什么时候开始集成测试？</span></strong></p><ul><li><span>在</span><strong><span>开始体系结构设计</span></strong><span>的时候开始</span><strong><span>制定测试方案</span></strong><span>； </span></li><li><span>在进入</span><strong><span>详细设计之前完成集成测试方案</span></strong><span>； </span></li><li><span>在进入</span><strong><span>系统测试之前结束集成测试</span></strong></li></ul><p><span>6.由谁来执行集成测试？</span></p><p><span>集成测试可以在开发部进行，也可以由独立的测试部执行。</span></p><p><span> 开发部尽量进行集成测试，测试部有选择地进行集成测试。</span></p><p><span>7.集成测试原则</span></p><ul><li><span>集成测试是产品研发中的重要工作，需要为其分配足够的资源和时间。 </span></li><li><span>集成测试需要经过严密的计划，并严格按计划执行。 </span></li><li><span>应采取</span><strong><span>增量式的分步集成方式</span></strong><span>，逐步进行软件部件的集成和测试。 </span></li><li><span>应重视测试自动化技术的引入与应用，不断提高集成测试效率。 </span></li><li><span>应该注意测试用例的积累和管理，方便进行回归并进行测试用例补充。</span></li></ul><p><span>8.集成测试关注的重点</span></p><ul><li><span>在把各个模块连接起来时，</span><strong><span>穿越模块接口的数据是否会丢失</span></strong><span>。 </span></li><li><span>各个子功能组合起来，</span><strong><span>能否达到预期要求的父功能</span></strong><span>。 </span></li><li><span>一个模块的功能</span><strong><span>是否会对另一个模块的功能产生不利的影响。</span></strong></li><li><strong><span>全局数据结构</span></strong><span>是否有问题，会不会被异常修改。 </span></li><li><span>单个模块的</span><strong><span>误差积累</span></strong><span>起来，是否会放大，从而达到不可以接受的程度。</span></li></ul><p><span>9.集成测试的层次</span></p><p><span>一般可以根据不同的集成力度把集成测试划分为 三个级别：</span></p><ul><li><span>模块内集成测试。 </span></li><li><span>子系统内集成测试：先测试子系统内的功能模块， 然后将各个功能模块组合起来确认子系统的功能是 否达到预期要求。 </span></li><li><span>子系统间集成测试：测试的单元是子系统之间的接 口。子系统是可单独运行的程序或进程。 </span></li></ul><p><span>对面向对象的应用系统来说，可分为2个层次： 类内集成测试类间集成测试</span></p><h3 id='62-集成测试策略'><span>6.2 集成测试策略</span></h3><p><span>1.非增量式方式</span></p><p><span>概念：先测试好每一个软件单元，然后一次组装在一起 再测试整个程序。</span></p><p><span>方法：大爆炸/大棒</span></p><p><img src="img/6-2.png" referrerpolicy="no-referrer"></p><p><span>优点： </span><strong><span>方法简单</span></strong><span>。 允许多测试人员同时并行工作，人力物力资源利用率较高。</span></p><p><span>缺点：</span></p><ul><li><span>必须为每个模块准备相应的驱动模块和桩模块，测试成本较高</span></li><li><span>难以保证对各个模块之间的接口进行充分测试；</span></li><li><span>对全局数据结构的测试不够彻底；</span></li><li><span>难以进行错误定位和修改； </span></li><li><span>修改错误之后，需要集成回归测试；</span></li></ul><p>&nbsp;</p><p><span>2.增量式方式</span></p><p><span>概念：逐步把下一个要被组装的软件单元或部件，同已测好的软件部件结合起来测试。 </span></p><p><span>方法：增量方式主要包括</span><strong><span>自顶向下、自底向上、自顶向下与自底向上相结合</span></strong><span>等方法</span></p><p><span>（1）自顶向下</span></p><p><span>模块集成的顺序是首先集成主控模块（主程序）， 然后依照控制层次结构向下进行集成</span></p><p><span>从属于主控模块的按深度优先方式（纵向）或者广 度优先方式（横向）集成到结构中去</span></p><p><span>深度优先组装方式：</span></p><p><img src="img/6-3.png" referrerpolicy="no-referrer"></p><p><span>广度优先组装方式：</span></p><p><img src="img/6-4.png" referrerpolicy="no-referrer"></p><p><span>自顶向下方法优点：</span></p><ul><li><span>较早地验证了主要控制和判断点； </span></li><li><span>按</span><strong><span>深度优先</span></strong><span>可以</span><strong><span>首先实现和验证一个完整的软件功能</span></strong><span>； </span></li><li><span>功能较早证实，带来信心； </span></li><li><strong><span>只需一个驱动</span></strong><span>，减少驱动器开发的费用</span></li><li><span>支持故障隔离</span></li></ul><p><span>自顶向下方法缺点： </span></p><ul><li><span>桩的开发和维护费用大</span></li><li><span>底层验证被推迟</span></li><li><span>底层模块的需求变更可能会影响到全局组件，需要修改整个系统的多个上层模块</span></li><li><span>可能会导致底层模块，特别是被重用的模块测试不够充分</span></li><li><span>要求控制模块具有比较高的可测试性</span></li></ul><p><span>自顶向下方法适用范围：</span></p><ul><li><span>产品控制结构比较清晰和稳定的应用程序</span></li><li><strong><span>高层接口变化较小</span></strong></li><li><strong><span>底层接口未定义或经常可能被修改</span></strong></li><li><span>产品控制组件具有较大的技术风险</span></li><li><span>需要尽早被验证</span></li><li><span>希望尽早能看到产品的系统功能行为</span></li></ul><p><span>（2）自底向上</span></p><p><span>从具有最小依赖性的底层组件开始，按照依赖关系树的结构，逐层向上集成，以检验系统的稳定性。 </span></p><p><strong><span>最常用的集成策略</span></strong><span>，其它方法都或多或少应用此种方法。</span></p><p><img src="img/6-5.png" referrerpolicy="no-referrer"></p><p><span>自底向上方法优点：</span></p><ul><li><span>对底层组件行为较早验证； </span></li><li><span>工作最初可以并行集成，比自顶向下效率高； </span></li><li><span>减少了桩的工作量； </span></li><li><span>能较好锁定软件故障所在位置</span></li></ul><p><span>自底向上方法优点缺点：</span></p><ul><li><span>驱动的开发工作量大； </span></li><li><span>对高层的验证被推迟，</span><strong><span>设计上的错误不能被及时发现</span></strong><span>。</span></li></ul><p><span>自底向上方法适用范围：</span></p><ul><li><span>适应于底层接口比较稳定； </span></li><li><span>高层接口变化比较频繁； </span></li><li><span>底层组件较早被完成</span></li></ul><p><span>（3）三明治集成方法</span></p><p><span>三明治集成方法是一种混合测试策略，综合了自顶向下和自底向上两种集成方法的优点</span></p><p><span>举例：用三明治集成方式如何测试？</span></p><p><img src="img/6-6.png" style="zoom:67%;" /></p><ul><li><span>确定以哪一层为界来决定使用三明治集成策略。我们确定以B模块为界； </span></li><li><span>对模块B</span><strong><span>及其所在层下面的各层使用自底向上</span></strong><span>的集成策略； </span></li><li><span>对模块B所在层</span><strong><span>上面的层次使用自顶向下</span></strong><span>的集成策略； </span></li><li><span>把模块B所在层各模块同相应的下层集成； </span></li><li><span>对系统进行整体测试</span></li></ul><p><span>三明治集成方法优点：</span></p><p><span>它将自顶向下和自底向上的集成方法有机地结合起来，一般对软件结构的上层使用自顶向下结合的方法；对下层使用自底向上结合的方法；运用一定的技巧，能够</span><strong><span>减少了桩模块和驱动模块的开发。</span></strong><span> </span></p><p><span>三明治集成方法缺点：</span></p><p><span>在被集成之前，</span><strong><span>中间层不能尽早得到充分的测试</span></strong><span>。 </span></p><p><span>三明治集成方法适用范围：适应于</span><strong><span>大部分软件开发项目</span></strong></p><p>&nbsp;</p><h3 id='63-小结'><span>6.3 小结</span></h3><p><img src="img/6-7.png" style="zoom:67%;" /></p><p>&nbsp;</p><h2 id='7系统测试-功能测试-回归测试-性能测试'><span>7.系统测试 功能测试 回归测试 性能测试</span></h2><h3 id='71-系统测试'><span>7.1 系统测试</span></h3><p><span>1.概念：系统测试指软件投产以前， 接近于日常测试的综合性检验测试，往往是很复 杂的过程。</span></p><p><span>2.目的：通过与系统的需求定义作比较，发现软件与系统定义不符合或与之矛盾的地方</span></p><p><span>3.目标：</span></p><ul><li><span>检验组成整个系统的代码、以及系统的软硬件配合有无错误；</span></li><li><span>代码实现的系统与用户需求是否吻合； </span></li><li><span>检验系统的文档等各种是否完整、有效；</span></li><li><span>模拟验收测试的要求，检查系统是否符合用户的验收标准；</span></li></ul><p><span>4.时机：多数集成测试完成后</span></p><p><span>5.方法：黑盒测试</span></p><p><span>6.责任人： 测试工程师</span></p><p><span>7.系统测试的环境：是软件真实运行环境的最逼真模拟。系统测试中，各部分研制完成的真实设备逐渐替代了模拟器，是软件从未有过的运行环境。</span></p><p><span>8.系统测试的主要内容</span><strong><span>：功能测试、性能测试</span></strong><span>、负载测试、强度测试、容量测试、安全性测试、</span><strong><span>配置测试</span></strong><span>、故障恢复测试 、</span><strong><span>安装测试</span></strong><span>、文档测试、用户界面测试等</span></p><p><span>功能测试、性能测试、配置测试、安装测试等在一般情况下是必需的，而其它的测试类型 则需要根据软件项目的具体要求进行裁剪。</span></p><h3 id='72-功能测试'><span>7.2 功能测试</span></h3><p><span>1.概念：又称正确性测试，是指在规定的一段时间内运行软件系统的所有功能，以验证这个软件系统有无严重错误，即测试软件系统的功能是否正确，由于</span><strong><span>正确性是软件最重要的质量因素</span></strong><span>， 故功能测试是软件测试中</span><strong><span>不可或缺的重要测试</span></strong><span>内容之一。</span></p><p><span>2.功能测试的意义</span></p><p><span>功能测试在</span><strong><span>单元测试</span></strong><span>和</span><strong><span>集成测试</span></strong><span>阶段都有。</span></p><ul><li><span>单元测试说明了代码执行是否正确； </span></li><li><span>功能测试说明了完成的功能是否做正确的事情 </span></li><li><span>单元测试中的功能测试是从代码开发人员的角度来 编写的，系统测试中的功能测试是从最终用户和业务流程的角度来编写的</span></li></ul><p><span>3.功能测试的内容</span></p><p><span>针对不同的应用系统，功能测试的测试内容的差异很大，但一般可归为界面、数据、操作、逻辑、接口等几个方面</span></p><p><span>4.</span><strong><span>功能测试需要的参考文档</span></strong></p><ul><li><span>① 产品</span><strong><span>功能说明书</span></strong></li><li><span>② 产品</span><strong><span>需求说明书</span></strong></li><li><span>③ 产品</span><strong><span>概要说明书</span></strong></li><li><span>④ 产品测试大纲 </span></li><li><span>⑤ 功能测试所需的测试用例</span></li></ul><p><span>5.什么是测试需求？</span></p><p><span>测试需求是用来识别什么内容是需要进行测试的</span></p><p><span>测试需求通常需要覆盖一些业务规则，功能以及非功能的内容，不需要有实际的测试数据出现</span></p><p><span>6.为什么要识别测试需求</span></p><ul><li><span>确定测试完整性的一个基础</span></li><li><span>确定测试的范围 </span></li><li><span>识别可做自动化测试的策略 </span></li><li><span>测试的方向标</span></li></ul><p><span>7.</span><strong><span>业务需求与测试需求的关系</span></strong></p><ul><li><span>业务需求通常是指</span><strong><span>系统需要做什么</span></strong><span>。 </span></li><li><span>测试需求</span><strong><span>除了需要覆盖系统应该做什么</span></strong><span>外 ，还要覆盖</span><strong><span>系统不应该做什么。</span></strong></li><li><span>测试需求是用来发现需求中存在的问题。</span></li></ul><h3 id='73-回归测试'><span>7.3 回归测试</span></h3><p><span>一旦程序某些区域被修改了，就可能影响其它区域，导致受影响的区域出现新的缺陷（回归缺陷）。如果这时没有回归测试，产品就带着这样的回归缺陷被发布出去了，造成严重后果。回归测试就是</span><strong><span>为了发现回归缺陷</span></strong><span>而进行的测试。</span></p><p><img src="img/7-1.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><strong><span>⭐单元测试、集成测试与系统测试的差别</span></strong></p><p><img src="img/7-2.png" referrerpolicy="no-referrer"></p><h3 id='74-性能测试'><span>7.4 性能测试</span></h3><p><span>1.什么是性能？</span></p><p><span>首先，软件的性能和功能的源头都是来自于用户的需求。 </span></p><p><strong><span>功能</span></strong><span>指的是在一般条件下</span><strong><span>软件系统能够为用户做什么</span></strong><span>，能够满足用户什么样的需求。</span></p><p><span>性能则是</span><strong><span>衡量软件系统“好快”</span></strong><span>的一个重要考虑因素。</span></p><p><span>简单地说，</span><strong><span>性能</span></strong><span>就是在空间和时间资源</span><strong><span>有限</span></strong><span>的条件下，软件系统还能不能工作。</span></p><p><span>2.功能与性能的关系</span></p><p><span>性能和功能区别的实质是：</span><strong><span>软件功能焦点在于软件“做什么”</span></strong><span>，关注软件物质“主体”发生的“事件”；</span><strong><span>软件性能则关注于软件物质“做得如何”</span></strong><span>，这是综合“空间”和“时间”考虑的方案（资源和速度），表现为软件对“空间”和“时间”的敏感度</span></p><p><span>3.用户对软件的性能需求</span></p><p><span>计算性能；资源的利用和回收；启动时间；伸缩性； 稳定性</span></p><p><span>4.</span><strong><span>性能指标</span></strong></p><ul><li><span>响应时间：就是用户感受软件系统为其服务所耗费的时间</span></li><li><span>吞吐量：是指软件系统在每单位时间内能处理多少个事务/请求/单位数据等</span></li><li><span>资源使用率</span></li><li><span>点击数</span></li><li><span>并发用户数</span></li></ul><p><span>凡是用户</span><strong><span>有关资源和时间的要求</span></strong><span>都可以被视作性能指标，都可以作为软件系统的度量，而性能测试就是</span><strong><span>为了验证这些性能指标是否被满足</span></strong></p><p><strong><span>5.⭐什么是性能测试？</span></strong></p><p><span>性能测试就是</span><strong><span>为了发现系统性能问题</span></strong><span>或</span><strong><span>获取系统性能相关指标</span></strong><span>而进行的测试。一般在</span><strong><span>真实环境、特定负载条件</span></strong><span>下，通过工具模拟实际软件系统的运行及其操作，同时监控性能各项指标，最后对测试结果进行分析来确定系统的性能状况。</span></p><p><strong><span>狭义的性能测试</span></strong><span>：主要用于描述常规的性能测试，是指通过</span><strong><span>模拟真实的业务压力</span></strong><span>或用户使用场景来</span><strong><span>测试系统的性能是否满足用户的性能要求</span></strong><span>。</span></p><p><strong><span>广义的性能测试</span></strong><span>：是压力测试、负载测试、强度测试、并发用户测试、大数据量测试、配置测试、可靠性测试等和性能相关的测试统称。</span></p><p><span>6.性能测试自身的一些特点</span></p><ul><li><span>性能测试</span><strong><span>不是功能测试</span></strong><span>。性能测试不要求也无法做到覆盖软件所有的功能，通常我们只是对系统中某些功能或模块做性能测试。</span></li><li><span>性能测试</span><strong><span>属于系统级测试</span></strong><span>。性能测试是基于单元测试、集成测试、功能测试等都已经完成的基础上，站在用户的角度去测试整个系统的。</span></li></ul><p><span>7.常见的性能测试方法</span></p><p><span>负载测试</span><span>	</span><strong><span>压力测试</span></strong><span>	</span><span>并发测试</span><span>	</span><span>强度测试</span><span>	</span><span>可靠性测试</span><span>	</span><span>基准测试</span><span>	</span><span>稳定性测试</span><span>	</span><span>可恢复测试</span></p><p><span>8.什么是压力测试？</span></p><ul><li><span>对系统不断施加压力的测试，是通过确定一个系统的瓶颈或不能接受用户请求的性能点，来获得系统能提供的最大服务级别的测试。</span></li><li><span>压力测试是为了考察系统在极端条件下的表现，可以是超负荷的交易量和并发用户数。这个条件并不一定是用户的性能需求，可能要远高于用户的性能需求。</span></li><li><span>压力测试是能让我们识别系统的弱点和在极限负载下程序将如何运行。</span></li><li><span>压力测试关心的是软件系统本身</span></li></ul><p>&nbsp;</p></div></div>
+</body>
+</html>
